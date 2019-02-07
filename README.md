@@ -10,5 +10,4 @@ If you spot mistakes, please do report them [here](https://docs.google.com/sprea
 ## What can we do with this dataset? 
 One possible application could be an application that allows people to see a list of candidates in their election areas. Please see the illustration below.
 
-
-...
+![](https://i.imgur.com/lcRTWGS.png)
