@@ -1,0 +1,134 @@
+html, body {
+    font-family: 'Sarabun', sans-serif;
+}
+
+.clear {
+    clear: both;
+}
+
+h1.title {
+    /* margin-top: 100px; */
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.header-img {
+    display: block;
+    width: 20%;
+    margin: auto;
+}
+
+.form {
+    text-align: center;
+}
+
+.form .postcode-label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.form input {
+    padding: 5px;
+    font-size: 34px;
+    text-align: center;
+    width: 180px;
+    border: 3px solid;
+}
+
+.results {
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+
+.zone ul {
+    text-align: left;
+}
+
+.zone .header {
+    font-size: 24px; 
+    margin-bottom: 5px;
+}
+
+.zone .area-name {
+    margin-right: 5px;
+}
+
+.zones .zone {
+    border: 2px solid black;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.zones a {
+    text-decoration: none;
+    color: black;
+}
+
+.zones a:visited {
+    color: black;
+}
+
+.zone-page {
+    width: 80%;
+    margin: auto;
+}
+
+h1.zone-title {
+    font-size: 56px;
+    font-family: 'Kanit', sans-serif;
+}
+
+.candidate {
+    margin-bottom: 10px;
+    border-top: 1px solid #ddd;
+}
+.candidate .avatar {
+    float: left;
+}
+
+.candidate .details {
+    float: left;
+    margin-left: 10px;
+}
+
+.candidate .details .additional-links a {
+    background: #bbb;
+    color: white;
+    text-decoration: none;
+    font-weight: normal;
+    display: inline-block;
+    padding: 5px;
+}
+
+.candidate .number {
+    float: right;
+    padding-top: 10px;
+}
+
+.candidate .number span {
+    float : right;
+}
+
+.candidate .number div {
+    font-family: 'Kanit', sans-serif;
+    text-align: center;
+    font-size: 70px;
+}
+
+.footer {
+    margin-top: 20px;
+    /* background: yellow; */
+    text-align: center;
+}

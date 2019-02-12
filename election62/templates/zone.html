@@ -1,15 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>{{zone.province}} เขตเลือกตั้งที่ {{zone.zone}}</h1>
-<h2>รายชื่อผู้สมัคร</h2>
-<ul>
-    {% for c in candidates %}
-        <li>
-            <div>
-                {{c.title}} <b>{{c.name}}</b> {{c.surname}} (เบอร์ {{c['no.']}})
-            </div>
-            จาก {{c.party}}
-        </li>
-    {% endfor %}
-</ul>
+<div class="zone-page">
+    <h1 class="zone-title">{{zone.province}} เขตเลือกตั้งที่ {{zone.zone}}</h1>
+    <h3>รายชื่อผู้สมัคร ({{candidates|length}} ท่าน)</h3>
+    <ul>
+        {% for c in candidates %}
+            <li class="candidate">
+                <img class="avatar" src="https://api.adorable.io/avatars/200/ffff@election.io"/>
+                <div class="details">
+                    <h2>
+                        {{c.title}} {{c.name}} {{c.surname}} 
+                    </h2>
+                    <div>
+                        <h3>พรรค {{c.party}}</h3>
+                    </div>
+                    <div class="additional-links">
+                        <a href="http://www.google.com/search?q={{c.name}} {{c.surname}}" target="_blank">ประวัติ</a>
+                    </div>
+                </div>
+                <div class="number">
+                    <span>เบอร์</span>
+                    <div>
+                        {{c['no.']}}
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

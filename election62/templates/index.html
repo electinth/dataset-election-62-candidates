@@ -1,14 +1,19 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h1>เว็บไซต์ตรวจสอบเขตเลือกตั้ง</h1>
-<h4>อยู่ในขั้นตอนพัฒนา!</h4>
-<div id='root'></div>
+<img class="header-img" src="http://elect.in.th/ballot-timeline/images/2562@3x.png"/>
+
+<h1 class="title">
+    ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร
+</h1>
+<div id='root'>
+
+</div>
 
 
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<script type="text/babel" src="{{deploy_path}}/statics/main.js"></script>
+<script src="//unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script crossorigin src="//unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="//unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script type="text/babel" src="//{{deploy_path}}/statics/main.js"></script>
 
 {% endblock %}

@@ -34,25 +34,56 @@ class Form extends React.Component {
     }
 
     render() {
-        let buttons = [];
+        let zones = [];
 
         if(this.state.postcode){
-            buttons = this.state.postcode.zones.map( z => {
-                let key = z.areas[0].province + '-' + z.zone ;
-                console.log(key);
-                let link = 'z/' + z.areas[0].province + '-' + z.zone + '.html';
-                return <li key={key}>
-                    <a href={link} key={key} target="_blank"> {z.areas[0].province} เขตเลือกตั้ง  {z.zone}</a>
+            zones = this.state.postcode.zones.map( z => {
+                let key = z.province + '-' + z.zone_id ;
+                let link = 'z/' + key + '.html';
+                return <li key={key} class="zone">
+                    <a href={link} key={key} target="_blank">
+                        <div class="header">
+                            {z.province} เขตเลือกตั้งที่  {z.zone_id}
+                        </div>
+                        <ul>
+                            {
+                                z.areas.map( a => {
+                                    return <li key={a.area}>
+                                        <span class="area-name">
+                                            {z.prefixes.area} {a.area}
+                                        </span>
+                                        { a.interior.length > 0 &&
+                                            <span>(<b>เฉพาะ </b>{z.prefixes.sub_area} {a.interior.join(', ')})</span>
+                                        }
+                                        { a.exterior.length > 0 &&
+                                            <span>(<b>ยกเว้น </b>{z.prefixes.sub_area} {a.exterior.join(', ')})</span>
+                                        }
+                                        { a.subinterior.length > 0 &&
+                                            <span>(<b>เฉพาะ </b>{z.prefixes.sub_area} {a.subinterior.join(', ')})</span>
+                                        }
+                                    </li>
+                                })
+                            }
+                        </ul>
+                    </a>
                 </li>
             });
         }
 
-        console.log(buttons);
+        console.log(zones);
         
         return (
-            <div >
-                <b>รหัสไปรษณีย์</b> <input  type="text" pattern="\d*" maxLength="5" onChange={this.handleChange} />
-                <ul>{buttons}</ul>
+            <div>
+                <div class="form">
+                    <div class="postcode-label">รหัสไปรษณีย์</div>
+                    <input  type="text" pattern="\d*" maxLength="5" onChange={this.handleChange} />
+                </div>
+                { zones.length > 0 &&
+                    <div class="results">
+                        มีทั้งหมด <b>{zones.length}</b> เขตเลือกตั้ง
+                        <ul class="zones">{zones}</ul>
+                    </div>
+                }
             </div>
         );
     }
