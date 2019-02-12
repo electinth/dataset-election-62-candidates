@@ -1,3 +1,4 @@
 #!/bin/bash
 
-ghpages -p dist
+python generate-site.py --env prod \
+&& ghpages -p dist
