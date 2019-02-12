@@ -12,10 +12,10 @@ logging.basicConfig(format='%(asctime)s| %(message)s', level=logging.INFO)
 DEST_LOCATION = './dist'
 config = {
     'dev': {
-        'path': 'http://192.168.0.125:7777/dist'  
+        'path': '192.168.0.125:7777/dist'  
     },
     'prod': {
-        'path': 'http://codeforthailand.github.io/dataset-election-62-candidates'  
+        'path': 'codeforthailand.github.io/dataset-election-62-candidates'  
     }
 }
 
