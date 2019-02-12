@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Noto Sans Thai';
+    src: url("fonts/NotoSansThaiUI-Regular.woff2") format("woff2"), url("fonts/NotoSansThaiUI-Regular.woff") format("woff");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans Thai';
+    src: url("fonts/NotoSansThaiUI-Bold.woff2") format("woff2"), url("fonts/NotoSansThaiUI-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'The Matter';
+    src: url("fonts/thematter-bold.woff2") format("woff2"), url("fonts/thematter-bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'The Matter';
+    src: url("thematter-extrabold.dd2e0ccc.woff2") format("woff2"), url("thematter-extrabold.2474d069.woff") format("woff");
+    font-weight: 800;
+}
+
+.site-header {
+    padding: 10px;
+    font-family: "Noto Sans", "Noto Sans Thai", sans-serif;
+    background: #FFF;
+}
+
+@media only screen and (max-width: 767px) {
+    .site-header {
+        padding: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .site-header .navbar {
+        align-items: flex-start;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .site-header .navbar .navbar-brand {
+        max-width: 50%;
+        white-space: normal;
+    }
+}
+
+.site-header .navbar .navbar-brand h6 {
+    color: #4a4a4a;
+    font-size: 0.75rem;
+    margin-top: 10px;
+}
+
+.site-header .navbar .navbar-brand img {
+    width: 100%;
+    max-width: 150px;
+}
+
+@media only screen and (max-width: 767px) {
+    .site-header .navbar .navbar-more {
+        flex-direction: column;
+        text-align: right;
+        margin-right: -5px;
+    }
+}
+
+.site-header .navbar .lang {
+    margin-right: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .site-header .navbar .lang {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.site-header .navbar .lang a {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 767px) {
+    .site-header .navbar .lang a {
+        padding: 5px 8px;
+    }
+}
+
+.site-header .navbar .lang a:first-child {
+    position: relative;
+}
+
+.site-header .navbar .lang a:first-child:after {
+    content: "|";
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: -5px;
+    color: #000;
+    font-weight: bold;
+}
+
+.site-header .navbar .lang a.active {
+    font-weight: bold;
+    color: #ef314a;
+}
+
+.site-header .navbar .social a {
+    padding: 0.5rem 0.7rem;
+}
