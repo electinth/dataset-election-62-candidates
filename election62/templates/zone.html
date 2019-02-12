@@ -2,11 +2,11 @@
 {% block content %}
 <div class="zone-page">
     <h1 class="zone-title">{{zone.province}} เขตเลือกตั้งที่ {{zone.zone}}</h1>
-    <h3>รายชื่อผู้สมัคร ({{candidates|length}} ท่าน)</h3>
+    <h3>รายชื่อผู้สมัคร ทั้งหมด {{candidates|length}} ท่าน</h3>
     <ul>
         {% for c in candidates %}
             <li class="candidate">
-                <img class="avatar" src="https://api.adorable.io/avatars/200/ffff@election.io"/>
+                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
                 <div class="details">
                     <h2>
                         {{c.title}} {{c.name}} {{c.surname}} 

@@ -37,7 +37,10 @@ os.mkdir(DEST_LOCATION)
 # todo: copy statics to dist
 copy_tree('./election62/statics', prepend_dir('statics'))
 
-templateEnv = jinja2.Environment(loader=jinja2.PackageLoader('election62', 'templates'))
+templateEnv = jinja2.Environment(
+    extensions=['jinja2_time.TimeExtension'],
+    loader=jinja2.PackageLoader('election62', 'templates')
+)
 
 logging.info('Rendering index.html')
 template = templateEnv.get_template('index.html')

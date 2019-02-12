@@ -40,16 +40,16 @@ class Form extends React.Component {
             zones = this.state.postcode.zones.map( z => {
                 let key = z.province + '-' + z.zone_id ;
                 let link = 'z/' + key + '.html';
-                return <li key={key} class="zone">
+                return <li key={key} className="zone">
                     <a href={link} key={key} target="_blank">
-                        <div class="header">
+                        <div className="header">
                             {z.province} เขตเลือกตั้งที่  {z.zone_id}
                         </div>
                         <ul>
                             {
                                 z.areas.map( a => {
                                     return <li key={a.area}>
-                                        <span class="area-name">
+                                        <span className="area-name">
                                             {z.prefixes.area} {a.area}
                                         </span>
                                         { a.interior.length > 0 &&
@@ -74,14 +74,14 @@ class Form extends React.Component {
         
         return (
             <div>
-                <div class="form">
-                    <div class="postcode-label">รหัสไปรษณีย์</div>
+                <div className="form">
+                    <div className="postcode-label">รหัสไปรษณีย์</div>
                     <input  type="text" pattern="\d*" maxLength="5" onChange={this.handleChange} />
                 </div>
                 { zones.length > 0 &&
-                    <div class="results">
+                    <div className="results">
                         มีทั้งหมด <b>{zones.length}</b> เขตเลือกตั้ง
-                        <ul class="zones">{zones}</ul>
+                        <ul className="zones">{zones}</ul>
                     </div>
                 }
             </div>
