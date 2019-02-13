@@ -47,6 +47,8 @@ h1.title {
     text-align: center;
     width: 180px;
     border: 3px solid;
+    font-weight: bold;
+    font-family: 'The Matter', serif;
 }
 
 .results {
@@ -102,6 +104,7 @@ h1.zone-title {
 }
 
 .candidate {
+    position: relative;
     margin-bottom: 10px;
     border-top: 1px solid #ddd;
 }
@@ -128,6 +131,9 @@ h1.zone-title {
 .candidate .number {
     float: right;
     padding-top: 10px;
+    position: absolute;
+    top: 10px;
+    right: 0px;
 }
 
 .candidate .number span {

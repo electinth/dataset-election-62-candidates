@@ -12,14 +12,12 @@
 
 <div class="note">
 <b>หมายเหตุ:</b>
-    (1) ระบบนี้ไม่ใช่ระบบทางการจาก กกต.
-    (2) ระบบอัพเดทเมื่อ {% now 'local', '%Y-%m-%d %H:%M' %}
-    (3) หากพบว่าข้อมูลมีการบกพร่อง หรือตกหล่น กรุณาติดต่อผู้จัดทำ :)
+    ข้อมูลชุดนี้มาจากการรวบรวมของ ELECT หากได้รับข้อมูลอย่างเป็นทางการของกกต. จะนำมาอัพเดทอีกครั้ง (อัพเดทเมื่อ {% now 'local', '%Y-%m-%d %H:%M' %})
 </div>
 
-<script src="//unpkg.com/babel-standalone@6/babel.min.js"></script>
-<script crossorigin src="//unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="//unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script type="text/babel" src="//{{deploy_path}}/statics/main.js"></script>
 
 {% endblock %}
