@@ -136,6 +136,7 @@ h1.zone-title {
     margin-top: 30px;
     border-top: 2px solid #ddd;
 }
+
 .candidate .avatar {
     float: left;
     width: 30%x;
@@ -154,7 +155,7 @@ h1.zone-title {
     font-size: 20px;
 }
 
-.candidate .details .additional-links a {
+.candidate .details a.additional-links {
     color: #F0324B;
     text-decoration: none;
     font-weight: normal;
