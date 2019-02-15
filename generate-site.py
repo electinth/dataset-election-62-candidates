@@ -18,7 +18,7 @@ config = {
         'path': 'codeforthailand.github.io/dataset-election-62-candidates'  
     },
     'prod': {
-        'path': 'elect.in.th/candidates/'  
+        'path': 'elect.in.th/candidates'  
     }
 }
 
