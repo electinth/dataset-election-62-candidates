@@ -1,519 +1,631 @@
 <html>
-    <head>
-        <title>ELECT.IN.TH</title>
-        <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi" name="viewport">
-        <meta charset="utf-8" /> 
-    
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
 
-        <link rel = "stylesheet" type = "text/css" href = "//codeforthailand.github.io/dataset-election-62-candidates/statics/header.css" />
-        <link rel = "stylesheet" type = "text/css" href = "//codeforthailand.github.io/dataset-election-62-candidates/statics/styles.css" />
+<head>
+    <title>ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร - ELECT.IN.TH</title>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48736618-4"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+    <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi"
+        name="viewport">
+    <meta charset="utf-8" />
 
-            gtag('js', new Date());
-            gtag('config', 'UA-48736618-4');
-        </script>
-    </head>
-    <body>
-        <header class="site-header">
-            <nav class="navbar navbar-light">
-                <a class="navbar-brand" href="#">
-                    <img src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png">
-                    <h6>Living In The Now Use It To Enrich Your Life.</h6>
-                </a>
-                <div class="ml-auto d-flex navbar-more">
-                    <div class="social">
-                        <a href="https://www.facebook.com/electinth" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a>
-                        <a href="https://twitter.com/electinth" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
-                    </div>
+    <!-- for Google -->
+    <meta name="description" content="">
+    <meta name="keywords" content="การเมือง, เลือกตั้ง, ประชาธิปไตย, การเมืองไทย, election, politics, democracy, thai politics, visualization, infographic, interactive, data journalism">
+    <meta name="author" content="elect.in.th">
+
+    <!-- for Facebook -->
+    <meta property="fb:app_id" content="171048360504115">
+    <meta property="og:title" content="ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://elect.in.th/ballot-timeline/images/cover.png">
+    <meta property="og:url" content="https://elect.in.th/ballot-timeline/">
+    <meta property="og:description" content="">
+
+    <!-- for Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://elect.in.th/ballot-timeline/images/cover.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="//codeforthailand.github.io/dataset-election-62-candidates/statics/header.css" />
+    <link rel="stylesheet" type="text/css" href="//codeforthailand.github.io/dataset-election-62-candidates/statics/styles.css" />
+    <link rel="stylesheet" type="text/css" href="//codeforthailand.github.io/dataset-election-62-candidates/statics/mobile.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48736618-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-48736618-4');
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png">
+                <h6>Living In The Now Use It To Enrich Your Life.</h6>
+            </a>
+            <div class="ml-auto d-flex navbar-more">
+                <div class="social">
+                    <a href="https://www.facebook.com/electinth" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a>
+                    <a href="https://twitter.com/electinth" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        
+    
 <div class="zone-page">
-    <h1 class="zone-title">ชุมพร เขตเลือกตั้งที่ 2</h1>
-    <h3>รายชื่อผู้สมัคร ทั้งหมด 21 ท่าน</h3>
+    <h1 class="zone-title">รายชื่อผู้สมัครส.ส.</h1>
+    <h2>ชุมพร เขตเลือกตั้งที่ 2</h2>
+    <h4 class="zone-information">
+        <span class="area">อำเภอ ท่าแซะ
+            
+            
+            
+        </span>
+    
+        <span class="area">อำเภอ ปะทิว
+            
+            
+            
+        </span>
+    
+        <span class="area">อำเภอ เมืองชุมพร
+            
+        <b>เฉพาะ</b> ตำบล บางลึก,บ้านนา,ถ้ำสิงห์,หาดพันไกร,วังใหม่
+    
+            
+            
+        </span>
+    </h4>
+
+    <h4>ทั้งหมด 21 ท่าน</h4>
     <ul>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาง วันทนา นาคสิงห์คราญ 
-                    </h2>
-                    <div>
-                        <h3>พรรค อนาคตใหม่</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=วันทนา นาคสิงห์คราญ" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/อนาคตใหม่.png" />
+            <div class="details">
+                <h2>พรรค อนาคตใหม่</h2>
+                <div class="name">
+                    นาง วันทนา นาคสิงห์คราญ
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        1
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=วันทนา นาคสิงห์คราญ" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    1
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย อภิศักดิ์ ศรีเผด็จ 
-                    </h2>
-                    <div>
-                        <h3>พรรค กรีน</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=อภิศักดิ์ ศรีเผด็จ" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/กรีน.png" />
+            <div class="details">
+                <h2>พรรค กรีน</h2>
+                <div class="name">
+                    นาย อภิศักดิ์ ศรีเผด็จ
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        2
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=อภิศักดิ์ ศรีเผด็จ" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    2
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย พิเชษฐ์ ศรีสดใส 
-                    </h2>
-                    <div>
-                        <h3>พรรค เสรีรวมไทย</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=พิเชษฐ์ ศรีสดใส" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/เสรีรวมไทย.png" />
+            <div class="details">
+                <h2>พรรค เสรีรวมไทย</h2>
+                <div class="name">
+                    นาย พิเชษฐ์ ศรีสดใส
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        3
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=พิเชษฐ์ ศรีสดใส" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    3
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย สมบูรณ์ หนูนวล 
-                    </h2>
-                    <div>
-                        <h3>พรรค พลังประชารัฐ</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=สมบูรณ์ หนูนวล" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/พลังประชารัฐ.png" />
+            <div class="details">
+                <h2>พรรค พลังประชารัฐ</h2>
+                <div class="name">
+                    นาย สมบูรณ์ หนูนวล
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        4
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=สมบูรณ์ หนูนวล" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    4
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย สันต์ แซ่ตั้ง 
-                    </h2>
-                    <div>
-                        <h3>พรรค รวมพลังประชาชาติไทย</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=สันต์ แซ่ตั้ง" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/รวมพลังประชาชาติไทย.png" />
+            <div class="details">
+                <h2>พรรค รวมพลังประชาชาติไทย</h2>
+                <div class="name">
+                    นาย สันต์ แซ่ตั้ง
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        5
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=สันต์ แซ่ตั้ง" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    5
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย นิพล แดงลาศ 
-                    </h2>
-                    <div>
-                        <h3>พรรค ภูมิใจไทย</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=นิพล แดงลาศ" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ภูมิใจไทย.png" />
+            <div class="details">
+                <h2>พรรค ภูมิใจไทย</h2>
+                <div class="name">
+                    นาย นิพล แดงลาศ
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        6
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=นิพล แดงลาศ" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    6
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย มนตรี พรหมฤทธ์ิ 
-                    </h2>
-                    <div>
-                        <h3>พรรค รักษ์ผืนป่าประเทศไทย</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=มนตรี พรหมฤทธ์ิ" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/รักษ์ผืนป่าประเทศไทย.png" />
+            <div class="details">
+                <h2>พรรค รักษ์ผืนป่าประเทศไทย</h2>
+                <div class="name">
+                    นาย มนตรี พรหมฤทธิ์
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        7
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=มนตรี พรหมฤทธิ์" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    7
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย สราวุธ อ่อนละมัย 
-                    </h2>
-                    <div>
-                        <h3>พรรค ประชาธิปัตย์</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=สราวุธ อ่อนละมัย" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ประชาธิปัตย์.png" />
+            <div class="details">
+                <h2>พรรค ประชาธิปัตย์</h2>
+                <div class="name">
+                    นาย สราวุธ อ่อนละมัย
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        8
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=สราวุธ อ่อนละมัย" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    8
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย ธนภัทร ประสิทธ์ิ 
-                    </h2>
-                    <div>
-                        <h3>พรรค ทางเลือกใหม่</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=ธนภัทร ประสิทธ์ิ" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ทางเลือกใหม่.png" />
+            <div class="details">
+                <h2>พรรค ทางเลือกใหม่</h2>
+                <div class="name">
+                    นาย ธนภัทร ประสิทธิ์
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        9
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=ธนภัทร ประสิทธิ์" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    9
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        ด.ต. ประดิษฐ์ ขําขาว 
-                    </h2>
-                    <div>
-                        <h3>พรรค เพื่อธรรม</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=ประดิษฐ์ ขําขาว" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/เพื่อธรรม.png" />
+            <div class="details">
+                <h2>พรรค เพื่อธรรม</h2>
+                <div class="name">
+                    ด.ต. ประดิษฐ์ ขำขาว
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        10
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=ประดิษฐ์ ขำขาว" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    10
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย หาญรบ ตุงคะเสน 
-                    </h2>
-                    <div>
-                        <h3>พรรค ชาติไทยพัฒนา</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=หาญรบ ตุงคะเสน" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ชาติไทยพัฒนา.png" />
+            <div class="details">
+                <h2>พรรค ชาติไทยพัฒนา</h2>
+                <div class="name">
+                    นาย หาญรบ ตุงคะเสน
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        11
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=หาญรบ ตุงคะเสน" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    11
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย ภาณุมาศ เพ็ชรคีรี 
-                    </h2>
-                    <div>
-                        <h3>พรรค ประชาชาติ</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=ภาณุมาศ เพ็ชรคีรี" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ประชาชาติ.png" />
+            <div class="details">
+                <h2>พรรค ประชาชาติ</h2>
+                <div class="name">
+                    นาย ภาณุมาศ เพ็ชรคีรี
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        12
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=ภาณุมาศ เพ็ชรคีรี" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    12
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย อํานาจ อินทนา 
-                    </h2>
-                    <div>
-                        <h3>พรรค ไทยรักษาชาติ</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=อํานาจ อินทนา" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ไทยรักษาชาติ.png" />
+            <div class="details">
+                <h2>พรรค ไทยรักษาชาติ</h2>
+                <div class="name">
+                    นาย อำนาจ อินทนา
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        13
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=อำนาจ อินทนา" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    13
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        ดร. รุจินาถ ศรีสุวรรณ 
-                    </h2>
-                    <div>
-                        <h3>พรรค เพื่อไทย</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=รุจินาถ ศรีสุวรรณ" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/เพื่อไทย.png" />
+            <div class="details">
+                <h2>พรรค เพื่อไทย</h2>
+                <div class="name">
+                    ดร. รุจินาถ ศรีสุวรรณ
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        14
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=รุจินาถ ศรีสุวรรณ" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    14
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย อํานาจ ณรงค์น้อย 
-                    </h2>
-                    <div>
-                        <h3>พรรค พลังท้องถ่ินไท</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=อํานาจ ณรงค์น้อย" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/พลังท้องถิ่นไท.png" />
+            <div class="details">
+                <h2>พรรค พลังท้องถิ่นไท</h2>
+                <div class="name">
+                    นาย อำนาจ ณรงค์น้อย
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        15
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=อำนาจ ณรงค์น้อย" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    15
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        พ.อ. พรพจน์ โชติ ณ ภาลัย 
-                    </h2>
-                    <div>
-                        <h3>พรรค เพื่อชาติ</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=พรพจน์ โชติ ณ ภาลัย" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/เพื่อชาติ.png" />
+            <div class="details">
+                <h2>พรรค เพื่อชาติ</h2>
+                <div class="name">
+                    พ.อ. พรพจน์ โชติ ณ ภาลัย
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        16
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=พรพจน์ โชติ ณ ภาลัย" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    16
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย ธวัช นุ้ยรัตน์ 
-                    </h2>
-                    <div>
-                        <h3>พรรค ประชาชนปฏิรูป</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=ธวัช นุ้ยรัตน์" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ประชาชนปฏิรูป.png" />
+            <div class="details">
+                <h2>พรรค ประชาชนปฏิรูป</h2>
+                <div class="name">
+                    นาย ธวัช นุ้ยรัตน์
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        17
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=ธวัช นุ้ยรัตน์" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    17
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย กิตติศักดิ์ รุ่งแดง 
-                    </h2>
-                    <div>
-                        <h3>พรรค พลังไทยรักไทย</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=กิตติศักดิ์ รุ่งแดง" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/พลังไทยรักไทย.png" />
+            <div class="details">
+                <h2>พรรค พลังไทยรักไทย</h2>
+                <div class="name">
+                    นาย กิตติศักดิ์ รุ่งแดง
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        18
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=กิตติศักดิ์ รุ่งแดง" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    18
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย สากล พงษ์ประยูร 
-                    </h2>
-                    <div>
-                        <h3>พรรค ไทยศรีวิไลย์</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=สากล พงษ์ประยูร" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ไทยศรีวิไลย์.png" />
+            <div class="details">
+                <h2>พรรค ไทยศรีวิไลย์</h2>
+                <div class="name">
+                    นาย สากล พงษ์ประยูร
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        19
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=สากล พงษ์ประยูร" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    19
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาย คมการ ศรีลาวรรณ 
-                    </h2>
-                    <div>
-                        <h3>พรรค ประชาภิวัฒน์</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=คมการ ศรีลาวรรณ" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/ประชาภิวัฒน์.png" />
+            <div class="details">
+                <h2>พรรค ประชาภิวัฒน์</h2>
+                <div class="name">
+                    นาย คมการ ศรีลาวรรณ
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        20
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=คมการ ศรีลาวรรณ" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    20
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
-            <li class="candidate">
-                <img class="avatar" src="https://i.imgur.com/6XaqO1e.png"/>
-                <div class="details">
-                    <h2>
-                        นาง สมมล ชัยวัฒน์จตุพร 
-                    </h2>
-                    <div>
-                        <h3>พรรค คลองไทย</h3>
-                    </div>
-                    <div class="additional-links">
-                        <a href="http://www.google.com/search?q=สมมล ชัยวัฒน์จตุพร" target="_blank">ประวัติ</a>
-                    </div>
+        <li class="candidate">
+            <img class="avatar" src="//codeforthailand.github.io/dataset-election-62-candidates/statics/party-logos/คลองไทย.png" />
+            <div class="details">
+                <h2>พรรค คลองไทย</h2>
+                <div class="name">
+                    นาง สมมล ชัยวัฒน์จตุพร
                 </div>
-                <div class="number">
-                    <span>เบอร์</span>
-                    <div>
-                        21
-                    </div>
+                <a class="additional-links" href="http://www.google.com/search?q=สมมล ชัยวัฒน์จตุพร" target="_blank">
+                    <i class="fas fa-search"></i>
+                    ค้นประวัติ
+                </a>
+            </div>
+            <div class="number">
+                <span>เบอร์</span>
+                <div>
+                    21
                 </div>
-                <div class="clear"></div>
-            </li>
+            </div>
+            <div class="clear"></div>
+        </li>
         
     </ul>
-</div>
 
-        <div class="footer">
-            <div class="credit">
-                Designed by <a href="https://cargocollective.com/namsai" target="_blank">Namsai Supavong</a> <span class="separator">|</span>
-                Developed by <a href="https://www.facebook.com/phoneee" target="_blank">Dollapak Suwanpunya</a> and <a href="http://pat.chormai.org" target="_blank">Pattarawat Chormai</a> <span class="separator">|</span>
-                <a href="https://github.com/codeforthailand/dataset-election-62-candidates" target="_blank">Github Repository</a>
-             </div>
+    <ul class="menu">
+        <li class="go-back"><a href="//codeforthailand.github.io/dataset-election-62-candidates"> 〈 กลับไปหน้าค้นหา</a></li>
+        <li class="sharer">
+            <span class="labelbox"><i class="fas fa-share-alt"></i>Share</span>
+            <span class="social">
+                <a class="share-facebook"><i class="fab fa-facebook-f fa-fw"></i></a>
+                <a class="share-twitter"><i class="fab fa-twitter fa-fw"></i></a>
+                <a class="share-line"><i class="fab fa-line fa-fw"></i></a>
+            </span>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '171048360504115',
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: 'v3.2'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<script>
+    function createPopup(url, width, height) {
+        var newwindow = window.open(url, "", "width=" + width + ",height=" + height + ",scrollbars=true");
+        if (window.focus) {
+            newwindow.focus()
+        }
+        return false;
+    }
+
+    let share_buttons = document.getElementsByClassName("share-facebook");
+    for (let i = 0; i < share_buttons.length; i++) {
+        let button = share_buttons[i];
+        button.onclick = function () {
+            let share_url = document.URL;
+
+            FB.ui({
+                method: 'feed',
+                display: 'popup',
+                link: share_url,
+            }, function (response) {});
+        }
+    }
+
+    share_buttons = document.getElementsByClassName("share-twitter");
+    for (let i = 0; i < share_buttons.length; i++) {
+        let button = share_buttons[i];
+        button.onclick = function () {
+            var share_url = document.URL;
+            var text = document.querySelector("meta[property='og:title']").getAttribute("content");
+            var retext = encodeURIComponent(text);
+            createPopup("https://twitter.com/share?text=" + retext + "&url=" + share_url, 550, 420);
+        }
+    }
+
+    share_buttons = document.getElementsByClassName("share-line");
+    for (let i = 0; i < share_buttons.length; i++) {
+        let button = share_buttons[i];
+        button.onclick = function () {
+            var share_url = document.URL;
+            createPopup("https://social-plugins.line.me/lineit/share?url=" + share_url, 550, 600);
+        }
+    }
+</script>
+
+    <div class="footer">
+        <div class="credit">
+            Designed by <a href="https://cargocollective.com/namsai" target="_blank">Namsai Supavong</a> <span class="separator">|</span>
+            Developed by <a href="https://www.facebook.com/phoneee" target="_blank">Dollapak Suwanpunya</a> and <a href="http://pat.chormai.org"
+                target="_blank">Pattarawat Chormai</a> <span class="separator">|</span>
+            <a href="https://github.com/codeforthailand/dataset-election-62-candidates" target="_blank">Github
+                Repository</a>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>
