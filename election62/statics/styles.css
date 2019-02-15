@@ -143,12 +143,13 @@ h1.zone-title {
     max-width: 214px;
     margin-top: -2px;
     border-top: 2px solid #ddd;
+    padding: 16px;
 }
 
 .candidate .details {
     float: left;
-    padding-top: 20px;
-    margin-left: 20px;
+    padding: 20px 10px 0px 10px;
+    margin-left: 0px;
 }
 
 .candidate .details .name {

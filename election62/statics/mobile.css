@@ -1,8 +1,4 @@
 @media only screen and (max-width: 800px) {
-    body {
-        /* background-color: yellow; */
-    }
-
     .zone-page h1 {
         font-size: 23px;
     }
@@ -21,6 +17,7 @@
 
     .candidate .avatar {
         max-width: 100px;
+        padding: 8px;
     }
 
     .candidate .details .name {
@@ -40,9 +37,8 @@
 
     .candidate .details {
         float: left;
-        padding-top: 5px;
-        margin-left: 5px;
-        width: 48%;
+        padding-top: 10px;
+        width: 45%;
     }
 
     .candidate .details a.additional-links {

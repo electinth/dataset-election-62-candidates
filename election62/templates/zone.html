@@ -12,7 +12,7 @@
 
 {% macro print_sub_areas(zone, sub_area, label) -%}
     {% if sub_area | length > 0 %}
-        <b>{{label}}</b> {{zone.prefixes.sub_area }} {{ sub_area | join(',') }}
+        <b>{{label}}</b> {{zone.prefixes.sub_area }} {{ sub_area | join(', ') }}
     {% endif %}
 {%- endmacro %}
 
@@ -28,7 +28,7 @@
         <li class="candidate">
             <img class="avatar" src="//{{deploy_path}}/statics/party-logos/{{c.party}}.png" />
             <div class="details">
-                <h2>พรรค {{c.party}}</h2>
+                <h2>{{c.party}}</h2>
                 <div class="name">
                     {{c.title}} {{c.name}} {{c.surname}}
                 </div>
