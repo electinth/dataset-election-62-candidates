@@ -1,49 +1,80 @@
 <html>
-    <head>
-        <title>ELECT.IN.TH</title>
-        <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi" name="viewport">
-        <meta charset="utf-8" /> 
-    
-        <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
 
-        <link rel = "stylesheet" type = "text/css" href = "//{{deploy_path}}/statics/header.css" />
-        <link rel = "stylesheet" type = "text/css" href = "//{{deploy_path}}/statics/styles.css" />
+<head>
+    <title>ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร - ELECT.IN.TH</title>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48736618-4"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+    <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, target-densityDpi=device-dpi"
+        name="viewport">
+    <meta charset="utf-8" />
 
-            gtag('js', new Date());
-            gtag('config', 'UA-48736618-4');
-        </script>
-    </head>
-    <body>
-        <header class="site-header">
-            <nav class="navbar navbar-light">
-                <a class="navbar-brand" href="#">
-                    <img src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png">
-                    <h6>Living In The Now Use It To Enrich Your Life.</h6>
-                </a>
-                <div class="ml-auto d-flex navbar-more">
-                    <div class="social">
-                        <a href="https://www.facebook.com/electinth" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a>
-                        <a href="https://twitter.com/electinth" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
-                    </div>
+    <!-- for Google -->
+    <meta name="description" content="">
+    <meta name="keywords" content="การเมือง, เลือกตั้ง, ประชาธิปไตย, การเมืองไทย, election, politics, democracy, thai politics, visualization, infographic, interactive, data journalism">
+    <meta name="author" content="elect.in.th">
+
+    <!-- for Facebook -->
+    <meta property="fb:app_id" content="171048360504115">
+    <meta property="og:title" content="ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://elect.in.th/ballot-timeline/images/cover.png">
+    <meta property="og:url" content="https://elect.in.th/ballot-timeline/">
+    <meta property="og:description" content="">
+
+    <!-- for Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="https://elect.in.th/ballot-timeline/images/cover.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="//{{deploy_path}}/statics/header.css" />
+    <link rel="stylesheet" type="text/css" href="//{{deploy_path}}/statics/styles.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48736618-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-48736618-4');
+    </script>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://elect.in.th/wp-content/uploads/2018/10/site-logo.png">
+                <h6>Living In The Now Use It To Enrich Your Life.</h6>
+            </a>
+            <div class="ml-auto d-flex navbar-more">
+                <div class="social">
+                    <a href="https://www.facebook.com/electinth" target="_blank"><i class="fab fa-facebook-f fa-fw"></i></a>
+                    <a href="https://twitter.com/electinth" target="_blank"><i class="fab fa-twitter fa-fw"></i></a>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
+    </header>
 
-        {% block content %}{% endblock %}
-        <div class="footer">
-            <div class="credit">
-                Designed by <a href="https://cargocollective.com/namsai" target="_blank">Namsai Supavong</a> <span class="separator">|</span>
-                Developed by <a href="https://www.facebook.com/phoneee" target="_blank">Dollapak Suwanpunya</a> and <a href="http://pat.chormai.org" target="_blank">Pattarawat Chormai</a> <span class="separator">|</span>
-                <a href="https://github.com/codeforthailand/dataset-election-62-candidates" target="_blank">Github Repository</a>
-             </div>
+    {% block content %}{% endblock %}
+    <div class="footer">
+        <div class="credit">
+            Designed by <a href="https://cargocollective.com/namsai" target="_blank">Namsai Supavong</a> <span class="separator">|</span>
+            Developed by <a href="https://www.facebook.com/phoneee" target="_blank">Dollapak Suwanpunya</a> and <a href="http://pat.chormai.org"
+                target="_blank">Pattarawat Chormai</a> <span class="separator">|</span>
+            <a href="https://github.com/codeforthailand/dataset-election-62-candidates" target="_blank">Github
+                Repository</a>
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

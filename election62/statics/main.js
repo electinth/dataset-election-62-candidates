@@ -38,28 +38,28 @@ class Form extends React.Component {
 
         if(this.state.postcode){
             zones = this.state.postcode.zones.map( z => {
-                let key = z.province + '-' + z.zone_id ;
+                let key = z.province + '-' + z.zone;
                 let link = 'z/' + key + '.html';
                 return <li key={key} className="zone">
                     <a href={link} key={key} target="_blank">
                         <div className="header">
-                            {z.province} เขตเลือกตั้งที่  {z.zone_id}
+                            {z.province} เขตเลือกตั้งที่  {z.zone}
                         </div>
                         <ul>
                             {
                                 z.areas.map( a => {
-                                    return <li key={a.area}>
+                                    return <li className="sub-area" key={a.area}>
                                         <span className="area-name">
                                             {z.prefixes.area} {a.area}
                                         </span>
                                         { a.interior.length > 0 &&
-                                            <span>(<b>เฉพาะ </b>{z.prefixes.sub_area} {a.interior.join(', ')})</span>
+                                            <span><b>เฉพาะ </b>{z.prefixes.sub_area} {a.interior.join(', ')}</span>
                                         }
                                         { a.exterior.length > 0 &&
-                                            <span>(<b>ยกเว้น </b>{z.prefixes.sub_area} {a.exterior.join(', ')})</span>
+                                            <span><b>ยกเว้น </b>{z.prefixes.sub_area} {a.exterior.join(', ')}</span>
                                         }
                                         { a.subinterior.length > 0 &&
-                                            <span>(<b>เฉพาะ </b>{z.prefixes.sub_area} {a.subinterior.join(', ')})</span>
+                                            <span><b>เฉพาะ </b>{z.prefixes.sub_area} {a.subinterior.join(', ')}</span>
                                         }
                                     </li>
                                 })
@@ -75,12 +75,14 @@ class Form extends React.Component {
         return (
             <div>
                 <div className="form">
-                    <div className="postcode-label">รหัสไปรษณีย์</div>
+                    <div className="postcode-label">ค้นหาจาก<b>รหัสไปรษณีย์</b></div>
                     <input  type="text" pattern="\d*" maxLength="5" onChange={this.handleChange} />
                 </div>
                 { zones.length > 0 &&
                     <div className="results">
-                        มีทั้งหมด <b>{zones.length}</b> เขตเลือกตั้ง
+                        <div className="result-label">
+                            มีทั้งหมด {zones.length} เขตเลือกตั้ง
+                        </div>
                         <ul className="zones">{zones}</ul>
                     </div>
                 }
