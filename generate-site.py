@@ -14,8 +14,11 @@ config = {
     'dev': {
         'path': '192.168.0.125:7777/dist'  
     },
-    'prod': {
+    'stage': {
         'path': 'codeforthailand.github.io/dataset-election-62-candidates'  
+    },
+    'prod': {
+        'path': 'elect.in.th/candidates/'  
     }
 }
 
@@ -47,16 +50,15 @@ template = templateEnv.get_template('index.html')
 template.stream(deploy_path=deploy_path).dump(prepend_dir('index.html'))
 
 logging.info('Rendering zone pages')
-with open('election-zones.json') as ez:  
+with open('./data/election-zones.json') as ez:  
     election_zones = json.load(ez)
 
-df_candidates = pd.read_csv('./election-62-candidates.csv')
+df_candidates = pd.read_csv('./data/election-62-candidates.csv')
 
 os.mkdir(prepend_dir('z'))
 
 template = templateEnv.get_template('zone.html')
 for ez in election_zones:
-    # cans = candidate_lists[ez]
     candidates = df_candidates[
             (df_candidates['province'] == ez['province']) &
             (df_candidates['zone'] == ez['zone'])
@@ -70,6 +72,3 @@ for ez in election_zones:
         candidates = sorted(candidates, key=lambda x: x['no.'])
         template.stream(deploy_path=deploy_path, zone=ez, candidates=candidates) \
             .dump(prepend_dir('z/%s.html' % filename))
-
-
-# todo: render zone
