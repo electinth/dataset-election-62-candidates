@@ -1,5 +1,3 @@
-console.log("script loaded");
-
 let CODE_TO_ZONES_PATH = "statics/postcode-to-zones.json";
 
 class Form extends React.Component {
