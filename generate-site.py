@@ -47,7 +47,7 @@ templateEnv = jinja2.Environment(
 
 logging.info('Rendering index.html')
 template = templateEnv.get_template('index.html')
-template.stream(deploy_path=deploy_path).dump(prepend_dir('index.html'))
+template.stream(deploy_path=deploy_path, env=args.environment).dump(prepend_dir('index.html'))
 
 logging.info('Rendering zone pages')
 with open('./data/election-zones.json') as ez:  
