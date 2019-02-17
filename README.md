@@ -23,8 +23,19 @@ python -m SimpleHTTPServer
 ```
 
 ## Changelog
-- 17/02/2019 (v0.2)
+- next
 ```
+- รหัสที่มีปัญหา 33150, 41000,
+- https://www.facebook.com/electinth/posts/371876360297770?comment_id=372263686925704&comment_tracking=%7B%22tn%22%3A%22R9%22%7D
+```
+- 17/02/19
+```
+# v0.2.1
+- search popup
+- correct อนาคตใหม่ ดาต้า (กทม.​ 12, 30)
+- update หมายเหตุ
+
+# v0.2
 - Attach index url to the ELECT logo (Issue#1)
 - Use React Prod files (PR#2)
 - Track candidate search to Google Analytics.
