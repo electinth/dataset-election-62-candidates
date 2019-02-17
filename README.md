@@ -29,4 +29,5 @@ python -m SimpleHTTPServer
 - Use React Prod files (PR#2)
 - Track candidate search to Google Analytics.
 - Correct อนาคตไทย candidates, not อนาคตใหม่
+- logo พรรคกลาง
 ```
