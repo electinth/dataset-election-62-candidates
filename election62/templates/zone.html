@@ -136,7 +136,8 @@
             'event_label': url,
             'transport_type': 'beacon',
             'event_callback': function(){
-                document.location = url;
+                var win = window.open(url, '_blank');
+                win.focus();
             }
         });
     }
