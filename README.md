@@ -21,3 +21,12 @@ Because the final web will be generated to `./dist`,  you can run a static web s
 ```
 python -m SimpleHTTPServer
 ```
+
+## Changelog
+- 17/02/2019 (v0.2)
+```
+- Attach index url to the ELECT logo (Issue#1)
+- Use React Prod files (PR#2)
+- Track candidate search to Google Analytics.
+- Correct อนาคตไทย candidates, not อนาคตใหม่
+```
