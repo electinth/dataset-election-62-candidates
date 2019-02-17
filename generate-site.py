@@ -15,7 +15,7 @@ config = {
         'path': '192.168.0.125:7777/dist'  
     },
     'stage': {
-        'path': 'codeforthailand.github.io/dataset-election-62-candidates'  
+        'path': 'pat.chormai.org/election-62-staging'  
     },
     'prod': {
         'path': 'elect.in.th/candidates'  
