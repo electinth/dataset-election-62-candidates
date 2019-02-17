@@ -28,6 +28,8 @@ parser.add_argument('--env', dest='environment', help='environment to generate')
 
 args = parser.parse_args()
 
+logging.info('Generating files for %s' % args.environment)
+
 deploy_path = config[args.environment]['path']
 
 def prepend_dir(path):
