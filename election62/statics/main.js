@@ -94,7 +94,7 @@ class Form extends React.Component {
               มีทั้งหมด {zones.length} เขตเลือกตั้ง
             </div>
             <ul className="zones">{zones}
-              <li><b style="color:blue"> &gt;&gt; คลิ๊กเพื่อ ดูรายชื่อผู้สมัคร &lt;&lt; </b></li>
+              <li><b style={{color:'#0000cc'}}> &gt;&gt; คลิ๊กเพื่อ ดูรายชื่อผู้สมัคร &lt;&lt; </b></li>
             </ul>
           </div>
         )}
