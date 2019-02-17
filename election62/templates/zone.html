@@ -32,7 +32,10 @@
                 <div class="name">
                     {{c.title}} {{c.name}} {{c.surname}}
                 </div>
-                <a class="additional-links" href="http://www.google.com/search?q={{c.name}} {{c.surname}}" target="_blank">
+                <a class="additional-links"
+                    href="http://www.google.com/search?q={{c.name}} {{c.surname}}"
+                    onclick="trackOutboundLink('http://www.google.com/search?q={{c.name}} {{c.surname}}'); return false;"
+                    target="_blank">
                     <i class="fas fa-search"></i>
                     ค้นประวัติ
                 </a>
@@ -124,6 +127,18 @@
             var share_url = document.URL;
             createPopup("https://social-plugins.line.me/lineit/share?url=" + share_url, 550, 600);
         }
+    }
+</script>
+<script>
+   var trackOutboundLink = function(url) {
+        gtag('event', 'click', {
+            'event_category': 'search-candidate',
+            'event_label': url,
+            'transport_type': 'beacon',
+            'event_callback': function(){
+                document.location = url;
+            }
+        });
     }
 </script>
 {% endblock %}
