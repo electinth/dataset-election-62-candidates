@@ -62,7 +62,7 @@ class Form extends React.Component {
                       {a.subinterior.length > 0 && (
                         <span>
                           <b>เฉพาะ </b>
-                          {z.prefixes.sub_area} {a.subinterior.join(", ")}
+                          {a.subinterior.join(", ")}
                         </span>
                       )}
                     </li>

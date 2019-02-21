@@ -3,16 +3,16 @@
 {% macro print_areas(zone) -%}
     {% for a in zone.areas %}
         <span class="area">{{zone.prefixes.area}} {{a.area}}
-            {{ print_sub_areas(zone, a['interior'], 'เฉพาะ')}}
-            {{ print_sub_areas(zone, a['exterior'], 'ยกเว้น')}}
-            {{ print_sub_areas(zone, a['subinterior'], 'เฉพาะ')}}
+            {{ print_sub_areas(zone, a['interior'], zone.prefixes.sub_area, 'เฉพาะ')}}
+            {{ print_sub_areas(zone, a['exterior'], zone.prefixes.sub_area, 'ยกเว้น')}}
+            {{ print_sub_areas(zone, a['subinterior'], '', 'เฉพาะ')}}
         </span>
     {% endfor %}
 {%- endmacro %}
 
-{% macro print_sub_areas(zone, sub_area, label) -%}
+{% macro print_sub_areas(zone, sub_area, prefix, label) -%}
     {% if sub_area | length > 0 %}
-        <b>{{label}}</b> {{zone.prefixes.sub_area }} {{ sub_area | join(', ') }}
+        <b>{{label}}</b> {{prefix}} {{ sub_area[:-1] | join(', ') }} และ {{ sub_area[-1] }}
     {% endif %}
 {%- endmacro %}
 
@@ -26,25 +26,33 @@
     <ul>
         {% for c in candidates %}
         <li class="candidate">
-            <img class="avatar" src="//{{deploy_path}}/statics/party-logos/{{c.party}}.png" />
+            <img class="avatar" src="//{{deploy_path}}/statics/party-logos/{{c.PartyName}}.png" />
             <div class="details">
-                <h2>{{c.party}}</h2>
+                <h2>{{c.PartyName}}</h2>
                 <div class="name">
-                    {{c.title}} {{c.name}} {{c.surname}}
+                    {{c.Title}} {{c.FirstName}} {{c.LastName}}
                 </div>
+                <span class="additional-links">
+                    <i class="fas fa-id-card"></i> {{c.Age}} ปี, {{c.Occupation}}
+                </span>
+                <span class="additional-links">
+                    <i class="fas fa-graduation-cap"></i> {{c.HighestEducation}}
+                </span>
                 <a class="additional-links"
-                    href="http://www.google.com/search?q={{c.name}} {{c.surname}}"
-                    onclick="trackOutboundLink('http://www.google.com/search?q={{c.name}} {{c.surname}}'); return false;"
+                    href="http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}"
+                    onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}'); return false;"
                     target="_blank">
-                    <i class="fas fa-search"></i>
-                    ค้นประวัติ
-                </a>
+                    <i class="fas fa-search"></i>ค้นประวัติ</a>
+                {% if not c.Votable %}
+                <div>
+                    <b>หมายเหตุ</b> ผอ.กกต.เขต ไม่ประกาศรับสมัคร โปรดตรวจสอบสถานะผู้สมัคร ณ​ ที่เลือกตั้ง อีกครั้งก่อนลองคะแนน
+                </div>
+                {% endif %}
+
             </div>
             <div class="number">
                 <span>เบอร์</span>
-                <div>
-                    {{c['no.']}}
-                </div>
+                <div>{{c.CandidateNo}}</div>
             </div>
             <div class="clear"></div>
         </li>

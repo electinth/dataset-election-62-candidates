@@ -51,6 +51,11 @@
 </head>
 
 <body>
+    {% if env in ['dev', 'stage'] %}
+        <div class="dev-banner">
+            Testing Site ({{env}})! <b>Use it with caution.</b>
+        </div>
+    {% endif %}
     <header class="site-header">
         <nav class="navbar navbar-light">
             <a class="navbar-brand" href="https://elect.in.th">
