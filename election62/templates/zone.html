@@ -12,7 +12,7 @@
 
 {% macro print_sub_areas(zone, sub_area, prefix, label) -%}
     {% if sub_area | length > 0 %}
-        <b>{{label}}</b> {{prefix}} {{ sub_area[:-1] | join(', ') }} และ {{ sub_area[-1] }}
+        <b>{{label}}</b> {{prefix}} {{ sub_area | join(', ') }}
     {% endif %}
 {%- endmacro %}
 
