@@ -12,7 +12,7 @@ logging.basicConfig(format='%(asctime)s| %(message)s', level=logging.INFO)
 DEST_LOCATION = './dist'
 config = {
     'dev': {
-        'path': '192.168.0.125:7777/dist'  
+        'path': 'localhost:8000/dist'  
     },
     'stage': {
         'path': 'pat.chormai.org/election-62-staging'  
@@ -55,15 +55,15 @@ logging.info('Rendering zone pages')
 with open('./data/election-zones.json') as ez:  
     election_zones = json.load(ez)
 
-df_candidates = pd.read_csv('./data/election-62-candidates.csv')
+df_candidates = pd.read_csv('./data/detailed-candidates.csv')
 
 os.mkdir(prepend_dir('z'))
 
 template = templateEnv.get_template('zone.html')
 for ez in election_zones:
     candidates = df_candidates[
-            (df_candidates['province'] == ez['province']) &
-            (df_candidates['zone'] == ez['zone'])
+            (df_candidates['province_name'] == ez['province']) &
+            (df_candidates['zone_number'] == ez['zone'])
         ].to_dict('records')
 
     filename = '%s-%s' % (ez['province'], ez['zone'])
@@ -71,6 +71,6 @@ for ez in election_zones:
         # something goes wrong here?
         logging.info('Zone %s has <10 candidates, skip it!' % filename)
     else:
-        candidates = sorted(candidates, key=lambda x: x['no.'])
+        candidates = sorted(candidates, key=lambda x: x['CandidateNo'])
         template.stream(deploy_path=deploy_path, zone=ez, candidates=candidates) \
             .dump(prepend_dir('z/%s.html' % filename))
