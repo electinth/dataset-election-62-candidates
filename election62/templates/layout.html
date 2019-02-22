@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร - ELECT.IN.TH</title>
 
@@ -32,9 +31,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="//{{deploy_path}}/statics/header.css" />
-    <link rel="stylesheet" type="text/css" href="//{{deploy_path}}/statics/styles.css" />
-    <link rel="stylesheet" type="text/css" href="//{{deploy_path}}/statics/mobile.css" />
+    <link rel="stylesheet" type="text/css" href="{{ ('//%s/statics/header.css' % deploy_path) | cache_buster }}" />
+    <link rel="stylesheet" type="text/css" href="{{ ('//%s/statics/styles.css' % deploy_path) | cache_buster }}" />
+    <link rel="stylesheet" type="text/css" href="{{ ('//%s/statics/mobile.css' % deploy_path) | cache_buster }}" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-48736618-4"></script>
@@ -53,7 +52,7 @@
 <body>
     {% if env in ['dev', 'stage'] %}
         <div class="dev-banner">
-            Testing Site ({{env}})! <b>Use it with caution.</b>
+            <b>ใช้สำหรับทดสอบระบบเท่านั้น (env={{env}})! </b>
         </div>
     {% endif %}
     <header class="site-header">

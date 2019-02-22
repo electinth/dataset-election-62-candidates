@@ -26,7 +26,7 @@
     <ul>
         {% for c in candidates %}
         <li class="candidate">
-            <img class="avatar" src="//{{deploy_path}}/statics/party-logos/{{c.PartyName}}.png" />
+            <img class="avatar" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
             <div class="details">
                 <h2>{{c.PartyName}}</h2>
                 <div class="name">
