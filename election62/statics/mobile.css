@@ -22,6 +22,7 @@
 
     .candidate .details .name {
         font-size: 14px;
+        line-height: 16px;
     }
 
     .candidate .number {
@@ -32,23 +33,48 @@
 
     .candidate .number div {
         font-size: 28px;
-        margin-top: -12px;
+        margin-top: -5px;
     }
 
     .candidate .details {
         float: left;
+        width: 60%;
         padding-top: 10px;
-        width: 45%;
     }
 
-    .candidate .details a.additional-links {
-        position: relative;
-        font-size: 12px;
-        margin-top: 15px;
+    .candidate .details h2 {
+        margin-bottom: 5px;
     }
 
-    ul.menu li.go-back {
+    .candidate .additional-details {
+        color: #747474;
+        font-size: 11px;
+        word-wrap: break-word;
+    }
+
+    .candidate .details .header {
+        width: 70%;
+    }
+
+    .candidate .details i {
+        margin-right:  2.5px;
+        font-size: 9px;
+    }
+
+    .candidate .header h2 {
+        display: block;
+        margin-top: 0px;
+        margin-bottom: 5px;
         width: 100%;
     }
 
+    .candidate .details a {
+        position: relative;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .back-button {
+        font-size: 12px;
+    }
 }

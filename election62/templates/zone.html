@@ -18,6 +18,7 @@
 
 {% block content %}
 <div class="zone-page">
+    <div class="back-button"><a href="//{{deploy_path}}"> 〈 กลับไปหน้าค้นหา</a></div>
     <h1 class="zone-title">รายชื่อผู้สมัครส.ส.</h1>
     <h2>{{zone.province}} เขตเลือกตั้งที่ {{zone.zone}}</h2>
     <h4 class="zone-information">{{print_areas(zone)}}</h4>
@@ -28,30 +29,32 @@
         <li class="candidate">
             <img class="avatar" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
             <div class="details">
-                <h2>{{c.PartyName}}</h2>
-                <div class="name">
-                    {{c.Title}} {{c.FirstName}} {{c.LastName}}
+                <div class="header">
+                    <h2>{{c.PartyName}}</h2>
+                    <div class="name">
+                        {{c.Title}} {{c.FirstName}} {{c.LastName}}
+                    </div>
                 </div>
-                <span class="additional-links">
-                    <i class="fas fa-id-card"></i> {{c.Age}} ปี, {{c.Occupation}}
-                </span>
-                <span class="additional-links">
-                    <i class="fas fa-graduation-cap"></i> {{c.HighestEducation}}
-                </span>
-                <a class="additional-links"
-                    href="http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}"
-                    onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}'); return false;"
-                    target="_blank">
-                    <i class="fas fa-search"></i>ค้นประวัติ</a>
-                {% if not c.Votable %}
-                <div>
-                    <b>หมายเหตุ</b> ผอ.กกต.เขต ไม่ประกาศรับสมัคร โปรดตรวจสอบสถานะผู้สมัคร ณ​ ที่เลือกตั้ง อีกครั้งก่อนลองคะแนน
-                </div>
-                {% endif %}
+                <div class="additional-details">
+                    <ul>
+                        <li><span>{{c.Age}} ปี</span></li>
+                        <li><span>{{c.Occupation}}</span></li>
+                        <li><span>{{c.HighestEducation}}</span></li>
+                    </ul>
 
+                    <a 
+                        href="http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}"
+                        onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}'); return false;"
+                        target="_blank">
+                        <i class="fas fa-search"></i>ค้นประวัติใน Google</a>
+                    {% if not c.Votable %}
+                    <div>
+                        <b>หมายเหตุ</b> ผอ.กกต.เขต ไม่ประกาศรับสมัคร โปรดตรวจสอบสถานะผู้สมัคร ณ​ ที่เลือกตั้ง อีกครั้งก่อนลองคะแนน
+                    </div>
+                    {% endif %}
+            </div>
             </div>
             <div class="number">
-                <span>เบอร์</span>
                 <div>{{c.CandidateNo}}</div>
             </div>
             <div class="clear"></div>
@@ -59,17 +62,19 @@
         {% endfor %}
     </ul>
 
-    <ul class="menu">
-        <li class="go-back"><a href="//{{deploy_path}}"> 〈 กลับไปหน้าค้นหา</a></li>
-        <li class="sharer">
-            <span class="labelbox"><i class="fas fa-share-alt"></i>Share</span>
-            <span class="social">
-                <a class="share-facebook"><i class="fab fa-facebook-f fa-fw"></i></a>
-                <a class="share-twitter"><i class="fab fa-twitter fa-fw"></i></a>
-                <a class="share-line"><i class="fab fa-line fa-fw"></i></a>
-            </span>
-        </li>
-    </ul>
+    <div class="share-menu">
+        <span class="label">Share</span>
+        <span class="share-button">
+            <a class="share-facebook"><i class="fab fa-facebook-f fa-fw"></i></a>
+        </span>
+        <span class="share-button">
+            <a class="share-twitter"><i class="fab fa-twitter fa-fw"></i></a>
+        </span>
+        <span class="share-button">
+            <a class="share-line"><i class="fab fa-line fa-fw"></i></a>
+        </span>
+
+    </div>
     <div class="clear"></div>
 </div>
 <script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script>

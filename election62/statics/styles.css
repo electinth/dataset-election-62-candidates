@@ -48,6 +48,14 @@ h1.title {
     margin-bottom: 20px;
 }
 
+.ui-guide {
+    color: #9B9B9B;
+}
+
+.ui-guide i {
+    margin-right: 5px;
+}
+
 .form input {
     padding: 5px;
     font-size: 24px;
@@ -156,22 +164,42 @@ h1.zone-title {
 
 .candidate .details {
     float: left;
-    padding: 20px 10px 0px 10px;
     margin-left: 0px;
+}
+
+.candidate .additional-details {
+    color: #747474;
+    font-size: 16px;
+}
+
+.candidate .additional-details ul {
+    margin-top: 10px;
+    list-style: disc;
+    padding: 0px 15px
+}
+
+.candidate .additional-details ul span {
+    margin-left: -5px;
 }
 
 .candidate .details .name {
     font-size: 20px;
 }
 
-.candidate .details a.additional-links {
+.candidate .header h2 {
+    margin-top: 10px;
+}
+
+.candidate .details a {
+    margin-top: 10px;
     color: #F0324B;
     text-decoration: none;
     font-weight: normal;
     display: inline-block;
-    padding: 5px;
-    position: absolute;
-    bottom: 20px;
+}
+
+.candidate .details i {
+    margin-right:  2.5px;
 }
 
 .candidate .number {
@@ -192,7 +220,7 @@ h1.zone-title {
     font-weight: 700;
     text-align: center;
     font-size: 60px;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 
 .note {
@@ -234,17 +262,48 @@ ul.menu li {
     margin-bottom: 15px;
 }
 
-ul.menu li.go-back {
-    float: left;
-}
-
-ul.menu li.go-back a {
+.back-button {
     display: block;
-    color: #F0324B;
-    padding: 10px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-ul.menu li.sharer {
+.back-button a, .back-button a:hover, .back-button a:visited {
+    color: #F0324B;
+}
+
+
+.share-menu {
+    padding-top: 10px;
+    border-top: 1px solid #E1E1E2;
+    color: #F0324B;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.share-menu .label {
+    line-height: 35px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.share-menu .share-button {
+    vertical-align: middle;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    color: white;
+    background: #F0324B;
+    border-radius: 17.5px;
+}
+
+.share-menu .share-button i {
+    line-height: 35px;
+}
+
+
+/* ul.menu li.sharer {
     float: right;
     font-family: sans-serif;
     background: #F0324B;
@@ -286,4 +345,4 @@ li.sharer .social a:after {
     background: #fff;
     width: 1px;
     height: 18px;
-}
+} */
