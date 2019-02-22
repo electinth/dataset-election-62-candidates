@@ -23,10 +23,11 @@ python -m SimpleHTTPServer
 ```
 
 ## Changelog
-- next
+- 22/02/19
 ```
 - รหัสที่มีปัญหา 33150, 41000, 12120
 - https://www.facebook.com/electinth/posts/371876360297770?comment_id=372263686925704&comment_tracking=%7B%22tn%22%3A%22R9%22%7D
+- เพิ่ม logo พรรค
 ```
 - 17/02/19
 ```
