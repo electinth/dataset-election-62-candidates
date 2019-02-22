@@ -6,13 +6,14 @@ import json
 import pandas as pd
 from distutils.dir_util import copy_tree
 import argparse
+import datetime
 
 logging.basicConfig(format='%(asctime)s| %(message)s', level=logging.INFO)
 
 DEST_LOCATION = './dist'
 config = {
     'dev': {
-        'path': 'localhost:8000/dist'  
+        'path': '192.168.100.251:8000/dist'
     },
     'stage': {
         'path': 'pat.chormai.org/election-62-staging'  
@@ -35,6 +36,9 @@ deploy_path = config[args.environment]['path']
 def prepend_dir(path):
     return '%s/%s' % (DEST_LOCATION, path)
 
+def cache_buster_url(url, cache_key=datetime.datetime.today().strftime('%Y-%m-%d-%H-%M')):
+    return '%s?v=%s' % (url, cache_key)
+
 if os.path.exists(DEST_LOCATION):
     shutil.rmtree(DEST_LOCATION)
 os.mkdir(DEST_LOCATION)
@@ -46,6 +50,8 @@ templateEnv = jinja2.Environment(
     extensions=['jinja2_time.TimeExtension'],
     loader=jinja2.PackageLoader('election62', 'templates')
 )
+
+templateEnv.filters['cache_buster'] = cache_buster_url
 
 logging.info('Rendering index.html')
 template = templateEnv.get_template('index.html')
@@ -68,9 +74,8 @@ for ez in election_zones:
 
     filename = '%s-%s' % (ez['province'], ez['zone'])
     if len(candidates) < 10:
-        # something goes wrong here?
         logging.info('Zone %s has <10 candidates, skip it!' % filename)
     else:
         candidates = sorted(candidates, key=lambda x: x['CandidateNo'])
-        template.stream(deploy_path=deploy_path, zone=ez, candidates=candidates) \
+        template.stream(deploy_path=deploy_path, zone=ez, candidates=candidates, env=args.environment) \
             .dump(prepend_dir('z/%s.html' % filename))
