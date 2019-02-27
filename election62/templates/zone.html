@@ -35,7 +35,11 @@
                     <h2>
                         {{c.PartyName}}
                         {% if c.party_abbv %}
-                            <a class="policy-button" href="https://elect.in.th/compare/{{c.party_abbv}},,?policy" target="_blank">
+                            <a class="policy-button"
+                                href="https://elect.in.th/compare/{{c.party_abbv}},,?policy"
+                                target="_blank"
+                                onclick="trackOutboundLink('https://elect.in.th/compare/{{c.party_abbv}},,?policy', 'view-party-policy'); return false;"
+                            >
                                 นโยบาย
                             </a>
                         {% endif %}
@@ -54,7 +58,7 @@
                     <a 
                         class="google-search"
                         href="http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}"
-                        onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}'); return false;"
+                        onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}', 'search-candidate'); return false;"
                         target="_blank">
                         <i class="fas fa-search"></i>ค้นประวัติใน Google</a>
                     {% if not c.Votable %}
@@ -153,9 +157,9 @@
     }
 </script>
 <script>
-   var trackOutboundLink = function(url) {
+   var trackOutboundLink = function(url, category) {
         gtag('event', 'click', {
-            'event_category': 'search-candidate',
+            'event_category': category,
             'event_label': url,
             'transport_type': 'beacon',
             'event_callback': function(){
