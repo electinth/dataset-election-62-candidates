@@ -153,9 +153,13 @@ h1.zone-title {
     border-top: 2px solid #ddd;
 }
 
-.candidate .avatar {
+
+.candidate .left-column {
     float: left;
-    width: 30%x;
+    width: auto;
+}
+
+.candidate .avatar {
     max-width: 214px;
     margin-top: -2px;
     border-top: 2px solid #ddd;
@@ -190,7 +194,7 @@ h1.zone-title {
     margin-top: 10px;
 }
 
-.candidate .details a {
+.candidate .details a.google-search {
     margin-top: 10px;
     color: #F0324B;
     text-decoration: none;
@@ -221,6 +225,17 @@ h1.zone-title {
     text-align: center;
     font-size: 60px;
     margin-top: -10px;
+}
+
+.candidate .policy-button {
+    font-size: 12px;
+    background-color: #F0324B;
+    color: white;
+    padding: 4px;
+    display: inline-block;
+    font-weight: normal;
+    font-family: 'Noto Sans Thai', serif;
+    vertical-align: middle;
 }
 
 .note {

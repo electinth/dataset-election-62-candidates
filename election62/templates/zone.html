@@ -27,10 +27,19 @@
     <ul>
         {% for c in candidates %}
         <li class="candidate">
-            <img class="avatar" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
+            <div class="left-column">
+                <img class="avatar" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
+            </div>
             <div class="details">
                 <div class="header">
-                    <h2>{{c.PartyName}}</h2>
+                    <h2>
+                        {{c.PartyName}}
+                        {% if c.party_abbv %}
+                            <a class="policy-button" href="https://elect.in.th/compare/{{c.party_abbv}},,?policy" target="_blank">
+                                นโยบาย
+                            </a>
+                        {% endif %}
+                    </h2>
                     <div class="name">
                         {{c.Title}} {{c.FirstName}} {{c.LastName}}
                     </div>
@@ -43,6 +52,7 @@
                     </ul>
 
                     <a 
+                        class="google-search"
                         href="http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}"
                         onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}'); return false;"
                         target="_blank">

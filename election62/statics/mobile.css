@@ -16,7 +16,7 @@
     }
 
     .candidate .avatar {
-        max-width: 100px;
+        max-width: 95px;
         padding: 8px;
     }
 
@@ -67,10 +67,15 @@
         width: 100%;
     }
 
-    .candidate .details a {
+    .candidate .details a.google-search {
         position: relative;
         font-size: 12px;
         margin-top: 10px;
+    }
+
+    .candidate .policy-button {
+        font-size: 9px;
+        vertical-align: top;
     }
 
     .back-button {

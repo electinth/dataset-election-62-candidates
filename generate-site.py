@@ -13,7 +13,7 @@ logging.basicConfig(format='%(asctime)s| %(message)s', level=logging.INFO)
 DEST_LOCATION = './dist'
 config = {
     'dev': {
-        'path': '192.168.100.251:8000/dist'
+        'path': '192.168.0.7:8000/dist'
     },
     'stage': {
         'path': 'pat.chormai.org/election-62-staging'  
@@ -43,7 +43,6 @@ if os.path.exists(DEST_LOCATION):
     shutil.rmtree(DEST_LOCATION)
 os.mkdir(DEST_LOCATION)
 
-# todo: copy statics to dist
 copy_tree('./election62/statics', prepend_dir('statics'))
 
 templateEnv = jinja2.Environment(
@@ -61,7 +60,11 @@ logging.info('Rendering zone pages')
 with open('./data/election-zones.json') as ez:  
     election_zones = json.load(ez)
 
+with open('./data/party-abbrevations.json') as pe:  
+    party2abbv = dict(map(lambda x: (x['name'], x['id']), json.load(pe)))
+    
 df_candidates = pd.read_csv('./data/detailed-candidates.csv')
+df_candidates['party_abbv'] = df_candidates.PartyName.apply(lambda x: party2abbv.get(x, None))
 
 os.mkdir(prepend_dir('z'))
 
