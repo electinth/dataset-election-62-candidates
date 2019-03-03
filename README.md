@@ -26,6 +26,10 @@ python -m SimpleHTTPServer
 This Jupyter notebook investigates families with multiple MP candidates as well as their affiliation/electoral area (party-list MP candidates are not included) in the 2019 Thai general election.  [[Notebook]](notebooks/political-dynasty.ipynb)
 
 ## Changelog
+- 03/03/19
+```
+- เพิ่มnotebook สำรวจนามสกุล/ตระกูลที่มีผู้สมัครส.ส.มากกว่าหนึ่งคนขึ้นไป
+```
 - 25/02/19
 ```
 - ย้ายลิงค์ฟอร์มแจ้ง
