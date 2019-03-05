@@ -34,15 +34,12 @@
                 <div class="header">
                     <h2>
                         {{c.PartyName}}
-                        {% if c.party_abbv %}
-                            <a class="policy-button"
-                                href="https://elect.in.th/compare/{{c.party_abbv}},,?policy"
-                                target="_blank"
-                                onclick="trackOutboundLink('https://elect.in.th/compare/{{c.party_abbv}},,?policy', 'view-party-policy'); return false;"
-                            >
-                                นโยบาย
-                            </a>
-                        {% endif %}
+                        <a class="policy-button"
+                            href="//{{deploy_path}}/p/{{c.PartyName}}.html#policy"
+                            target="_blank"
+                        >
+                            นโยบาย
+                        </a>
                     </h2>
                     <div class="name">
                         {{c.Title}} {{c.FirstName}} {{c.LastName}}

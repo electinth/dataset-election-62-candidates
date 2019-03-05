@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="party-page">
+
+<div class="section-header">ชื่อพรรค</div>
+<div class="section-content center">
+    <div>
+        {{party.name_th}}
+    </div>
+    <div>
+        {{party.name_en}}
+    </div>
+</div>
+
+<div class="section-header">ตราสัญลักษณ์</div>
+<div class="section-content center">
+    <img class="logo" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, party.slug)) | cache_buster }}"/>
+</div>
+
+<div class="section-header">หัวหน้าพรรค</div>
+<div class="section-content center">
+    {{party.leader}}
+</div>
+
+<div class="section-header">เลขาธิการ</div>
+<div class="section-content center">
+    {{party.secretary}}
+</div>
+
+<div id="policy" class="section-header">นโยบาย</div>
+<div class="section-content">
+    {{party.policy}}
+
+    {% if party.party_abbv %}
+        <div class="center">
+            <div class="policy-compare-button">
+            <a href="https://elect.in.th/compare/{{party.party_abbv}},,?policy"
+                target="_blank" >
+                เปรียบเทียบนโยบาย
+            </a>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<div class="section-header">บุคคลซึ่งพรรคการเมืองเสนอให้เป็นนายกฯ</div>
+<div class="section-content center">
+    {% if party.pm_candidates | length > 0 %}
+    <ul>
+        {% for c in party.pm_candidates %}
+        <li>
+            {{c.Sequence}}. {{c.Title}} {{c.FirstName}} {{c.LastName}}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <i>ไม่มีรายชื่อเสนอ</i>
+    {% endif %}
+</div>
+
+<div class="section-header">เบอร์โทร</div>
+<div class="section-content center">
+    {{party.phone}}
+</div>
+
+<div class="section-header">ที่อยู่</div>
+<div class="section-content center">
+    {{party.address}}
+</div>
+
+<div class="section-header">รหัสบริจาค</div>
+<div class="section-content center">
+    {{party.donate_code}}
+</div>
+
+{% endblock %}
