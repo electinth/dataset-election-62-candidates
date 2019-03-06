@@ -28,20 +28,19 @@
         {% for c in candidates %}
         <li class="candidate">
             <div class="left-column">
-                <img class="avatar" 
-                    id="logo-image-{{c.CandidateNo}}"
-                    src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
+                <a 
+                    href="//{{deploy_path}}/p/{{c.PartyName}}.html#policy"
+                    target="_blank"
+                >
+                    <img class="avatar" 
+                        id="logo-image-{{c.CandidateNo}}"
+                        src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
+                </a>
             </div>
             <div class="details">
                 <div class="header">
                     <h2>
                         {{c.PartyName}}
-                        <a class="policy-button"
-                            href="//{{deploy_path}}/p/{{c.PartyName}}.html#policy"
-                            target="_blank"
-                        >
-                            นโยบาย
-                        </a>
                     </h2>
                     <div class="name">
                         {{c.Title}} {{c.FirstName}} {{c.LastName}}
@@ -60,10 +59,6 @@
                         onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}', 'search-candidate'); return false;"
                         target="_blank">
                         <i class="fas fa-search"></i>ค้นประวัติใน Google</a>
-                    
-                    <a>
-                        ดูนโยบายพรรค
-                    </a>
                     {% if not c.Votable %}
                     <div>
                         <b>หมายเหตุ</b> ผอ.กกต.เขต ไม่ประกาศรับสมัคร โปรดตรวจสอบสถานะผู้สมัคร ณ​ ที่เลือกตั้ง อีกครั้งก่อนลงคะแนน
