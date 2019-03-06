@@ -341,13 +341,18 @@ ul.menu li {
 }
 
 .party-page .policy-compare-button {
-    color: white;
-    background: red;
-    padding: 5px;
+    color: #9B9B9B;
+    padding: 5px 20px;
     display: inline-block;
     margin-top: 10px;
+
+    border: 1px solid #E1E1E2;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 #C3C3C3;
 }
 
 .policy-compare-button a, .policy-compare-button a:visited {
-    color: white;
+    color: #9B9B9B;
 }
