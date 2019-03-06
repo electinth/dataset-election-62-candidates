@@ -28,7 +28,9 @@
         {% for c in candidates %}
         <li class="candidate">
             <div class="left-column">
-                <img class="avatar" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
+                <img class="avatar" 
+                    id="logo-image-{{c.CandidateNo}}"
+                    src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
             </div>
             <div class="details">
                 <div class="header">
@@ -58,6 +60,10 @@
                         onclick="trackOutboundLink('http://www.google.com/search?q={{c.FirstName}} {{c.LastName}}', 'search-candidate'); return false;"
                         target="_blank">
                         <i class="fas fa-search"></i>ค้นประวัติใน Google</a>
+                    
+                    <a>
+                        ดูนโยบายพรรค
+                    </a>
                     {% if not c.Votable %}
                     <div>
                         <b>หมายเหตุ</b> ผอ.กกต.เขต ไม่ประกาศรับสมัคร โปรดตรวจสอบสถานะผู้สมัคร ณ​ ที่เลือกตั้ง อีกครั้งก่อนลงคะแนน
@@ -88,6 +94,21 @@
     </div>
     <div class="clear"></div>
 </div>
+<script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@4"></script>
+<script>
+    var t = tippy('#logo-image-1', {
+        content: 'กดโลโก้เพื่ออ่านนโยบายของพรรค',
+        arrow: true,
+        placement: 'bottom'
+    })[0];
+
+    t.show(1000);
+
+    window.onscroll = function() {
+        t.destroy(500);
+    };
+</script>
 <script id="facebook-jssdk" src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script>
     window.fbAsyncInit = function () {
