@@ -75,4 +75,10 @@
     {{party.donate_code}}
 </div>
 
+{% if party.terminated %}
+<script>
+    alert('หมายเหตุ : ถูกศาลรัฐธรรมนูญสั่งยุบพรรค (7 มี.ค. 2562)')
+</script>
+{% endif %}
+
 {% endblock %}

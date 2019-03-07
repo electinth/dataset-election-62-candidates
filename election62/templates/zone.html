@@ -55,11 +55,20 @@
                         target="_blank">
                         <i class="fas fa-search"></i>ค้นประวัติใน Google</a>
 
-                    <a 
-                        class="google-search"
-                        href="//{{deploy_path}}/p/{{c.PartyName}}.html#policy"
-                        target="_blank">
-                        <i class="far fa-file"></i>ดูนโยบายพรรค</a>
+                    {% if not c.PartyTerminated %}
+                        <a 
+                            class="google-search"
+                            href="//{{deploy_path}}/p/{{c.PartyName}}.html#policy"
+                            target="_blank">
+                                <i class="far fa-file"></i>ดูนโยบายพรรค
+                        </a>
+                    {% endif %}
+
+                    {% if c.PartyTerminated %}
+                    <div>
+                        <b>หมายเหตุ</b> ถูกศาลรัฐธรรมนูญสั่งยุบพรรค (7 มี.ค. 2562)
+                    </div>
+                    {% endif %}
 
                     {% if not c.Votable %}
                     <div>
