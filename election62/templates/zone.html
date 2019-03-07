@@ -55,14 +55,12 @@
                         target="_blank">
                         <i class="fas fa-search"></i>ค้นประวัติใน Google</a>
 
-                    {% if not c.PartyTerminated %}
-                        <a 
-                            class="google-search"
-                            href="//{{deploy_path}}/p/{{c.PartyName}}.html#policy"
-                            target="_blank">
-                                <i class="far fa-file"></i>ดูนโยบายพรรค
-                        </a>
-                    {% endif %}
+                    <a 
+                        class="google-search"
+                        href="//{{deploy_path}}/p/{{c.PartyName}}.html#policy"
+                        target="_blank">
+                            <i class="far fa-file"></i>ดูนโยบายพรรค
+                    </a>
 
                     {% if c.PartyTerminated %}
                     <div>
