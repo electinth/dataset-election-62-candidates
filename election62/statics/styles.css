@@ -179,7 +179,8 @@ h1.zone-title {
 .candidate .additional-details ul {
     margin-top: 10px;
     list-style: disc;
-    padding: 0px 15px
+    padding: 0px 15px;
+    margin-bottom: 10px;
 }
 
 .candidate .additional-details ul span {
@@ -195,11 +196,11 @@ h1.zone-title {
 }
 
 .candidate .details a.google-search {
-    margin-top: 10px;
     color: #F0324B;
     text-decoration: none;
     font-weight: normal;
     display: inline-block;
+    margin-right: 10px;
 }
 
 .candidate .details i {
