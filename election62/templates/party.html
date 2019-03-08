@@ -16,7 +16,7 @@
 
 <div class="section-header">ตราสัญลักษณ์</div>
 <div class="section-content center">
-    <img class="logo" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, party.slug)) | cache_buster }}"/>
+    <img class="logo {{ 'bw-image' if party.terminated }}" src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, party.slug)) | cache_buster }}"/>
 </div>
 
 <div class="section-header">หัวหน้าพรรค</div>

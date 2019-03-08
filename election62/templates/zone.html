@@ -28,7 +28,7 @@
         {% for c in candidates %}
         <li class="candidate">
             <div class="left-column">
-                <img class="avatar" 
+                <img class="avatar {{ 'bw-image' if c.PartyTerminated }}"
                     id="logo-image-{{c.CandidateNo}}"
                     src="{{ ('//%s/statics/party-logos/%s.png' % (deploy_path, c.PartyName)) | cache_buster }}"/>
             </div>
