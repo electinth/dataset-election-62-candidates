@@ -39,6 +39,11 @@ h1.title {
     text-align: center;
 }
 
+.bw-image {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
 .form {
     text-align: center;
 }
@@ -179,7 +184,8 @@ h1.zone-title {
 .candidate .additional-details ul {
     margin-top: 10px;
     list-style: disc;
-    padding: 0px 15px
+    padding: 0px 15px;
+    margin-bottom: 10px;
 }
 
 .candidate .additional-details ul span {
@@ -195,11 +201,11 @@ h1.zone-title {
 }
 
 .candidate .details a.google-search {
-    margin-top: 10px;
     color: #F0324B;
     text-decoration: none;
     font-weight: normal;
     display: inline-block;
+    margin-right: 20px;
 }
 
 .candidate .details i {
@@ -317,47 +323,42 @@ ul.menu li {
     line-height: 35px;
 }
 
+.party-page {
+    padding: 0px 15px;
+}
 
-/* ul.menu li.sharer {
-    float: right;
-    font-family: sans-serif;
-    background: #F0324B;
-    font-weight: normal;
+.party-page .center {
+    text-align: center;
+}
+
+.party-page .section-header {
+    font-weight: bold;
+    color: #9B9B9B;
+    border-bottom: 1px #9B9B9B solid;
+}
+
+.party-page .section-content {
+    margin-bottom: 20px;
+    padding: 10px 0px;
+}
+
+.party-page .logo {
+    width: 200px;
+}
+
+.party-page .policy-compare-button {
+    color: #9B9B9B;
+    padding: 5px 20px;
     display: inline-block;
-    line-height: 50px;
-    height: 50px;
-    border: 0px;
+    margin-top: 10px;
+
+    border: 1px solid #E1E1E2;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 #C3C3C3;
 }
 
-ul.menu li.sharer, ul.menu li.sharer a {
-    color: white;
+.policy-compare-button a, .policy-compare-button a:visited {
+    color: #9B9B9B;
 }
-
-li.sharer .labelbox {
-    background: #DB253D;
-    line-height: 50px;
-    height: 50px;
-    display: inline-block;
-    padding: 0 20px;
-}
-
-li.sharer .labelbox i {
-    margin-right: 5px;
-}
-
-li.sharer .social a {
-    display: inline-block;
-    padding: 10px;
-    cursor: pointer;
-}
-
-li.sharer .social a:after {
-    content: "";
-    display: inline-block;
-    position: relative;
-    top: calc(50% - 9px);
-    right: -11px;
-    background: #fff;
-    width: 1px;
-    height: 18px;
-} */

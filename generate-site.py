@@ -8,12 +8,13 @@ from distutils.dir_util import copy_tree
 import argparse
 import datetime
 
+
 logging.basicConfig(format='%(asctime)s| %(message)s', level=logging.INFO)
 
 DEST_LOCATION = './dist'
 config = {
     'dev': {
-        'path': '192.168.0.7:8000/dist'
+        'path': '%s/dist' % os.environ.get('WEBPATH', 'localhost:8000')
     },
     'stage': {
         'path': 'pat.chormai.org/election-62-staging'  
@@ -29,7 +30,6 @@ parser.add_argument('--env', dest='environment', help='environment to generate')
 
 args = parser.parse_args()
 
-logging.info('Generating files for %s' % args.environment)
 
 deploy_path = config[args.environment]['path']
 
@@ -52,10 +52,14 @@ templateEnv = jinja2.Environment(
 
 templateEnv.filters['cache_buster'] = cache_buster_url
 
+logging.info('Generating files for %s' % config[args.environment]['path'])
+
+# render frontpage
 logging.info('Rendering index.html')
 template = templateEnv.get_template('index.html')
 template.stream(deploy_path=deploy_path, env=args.environment).dump(prepend_dir('index.html'))
 
+# render zone pages
 logging.info('Rendering zone pages')
 with open('./data/election-zones.json') as ez:  
     election_zones = json.load(ez)
@@ -82,3 +86,19 @@ for ez in election_zones:
         candidates = sorted(candidates, key=lambda x: x['CandidateNo'])
         template.stream(deploy_path=deploy_path, zone=ez, candidates=candidates, env=args.environment) \
             .dump(prepend_dir('z/%s.html' % filename))
+
+# render party pages
+logging.info('Rendering party pages')
+os.mkdir(prepend_dir('p'))
+
+template = templateEnv.get_template('party.html')
+
+with open('./data/party-information.json') as pt:  
+    party_info = json.load(pt)
+
+for p in party_info:
+    filename = p['slug']
+    p['party_abbv'] = party2abbv.get(p['slug'], None)
+
+    template.stream(deploy_path=deploy_path, env=args.environment, party=p) \
+        .dump(prepend_dir('p/%s.html' % filename))
