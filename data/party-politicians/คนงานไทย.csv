@@ -1,3 +1,4 @@
-name,desc
-กชวรรณ ยอดจักร์,สส.เขต (ศรีสะเกษ เขต 3)
-สุทิน มุสิกะ,สส.เขต (สงขลา เขต 1)
+name,desc,image,PartyName,memberType,province_name,zone_number
+กชวรรณ ยอดจักร์,ส.ส. เขต (ศรีสะเกษ เขต 3),http://202.6.26.16/images/candidate/thumb/33/3/ca38790b-5683-4480-96d7-b46ef5478eb7.jpg,คนงานไทย,zone,ศรีสะเกษ,3
+สุทิน มุสิกะ,ส.ส. เขต (สงขลา เขต 1),http://202.6.26.16/images/candidate/thumb/90/1/6f9027cb-580e-472d-9a1b-150ff0c7173f.jpg,คนงานไทย,zone,สงขลา,1
+ธีระ เจียบุญหยก,ส.ส. บัญชีรายชื่อ (ลำดับที่ 1),http://202.6.26.16/images/candidate/thumb/00/104/84d50af2-aab6-49b4-aeca-f3a9b207785c.jpg,คนงานไทย,partylist,-,-
