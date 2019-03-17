@@ -5,7 +5,18 @@
     ข้อมูลเขตเลือกตั้งและรายชื่อผู้สมัคร
 </h1>
 <div id='root'>
-
+    <div class="loader">
+        <img src='{{ ('//%s/statics/loading.gif' % deploy_path) | cache_buster }}'>
+        <div id='timeout'>
+            หากยังไม่สามารถใช้งานได้ กรุณากด <a href="#" onclick="location.reload()">Reload</a>
+        </div>
+        <!-- Keep this script inline here to make sure loading work even other js failed.  -->
+        <script type="text/javascript">
+            setTimeout(function(){
+                document.getElementById("timeout").style.display = 'block';
+            }, 15000);
+        </script>
+    </div>
 </div>
 
 <div class="note">
