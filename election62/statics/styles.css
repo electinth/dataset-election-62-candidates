@@ -362,3 +362,20 @@ ul.menu li {
 .policy-compare-button a, .policy-compare-button a:visited {
     color: #9B9B9B;
 }
+
+.loader {
+    text-align: center;
+    padding: 24px;
+}
+
+.loader img {
+    margin: 10px;
+}
+
+.loader a {
+    text-decoration: underline;
+}
+
+.loader #timeout {
+    display: none;
+}
