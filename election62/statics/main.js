@@ -96,8 +96,8 @@ class Form extends React.Component {
             <ul className="zones">
               {zones}
             </ul>
-            <div class="ui-guide">
-              <i class="fas fa-hand-point-up"></i>
+            <div className="ui-guide">
+              <i className="fas fa-hand-point-up"></i>
               คลิก เพื่อดูรายชื่อผู้สมัคร 
             </div>
           </div>
