@@ -75,19 +75,6 @@ class Form extends React.Component {
 
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.postcode && this.state.postcode.zones.length > 0) {
-      if(!prevState.postcode ||
-        !prevState.postcode.code ||
-        (this.state.postcode.code !== prevState.postcode.code))
-      gtag('event', 'input', {
-        'event_category': 'postcode',
-        'event_label': this.state.postcode.code,
-        'transport_type': 'beacon'
-      });
-    }
-  }
-
   render() {
     let zones = [];
 
