@@ -379,3 +379,10 @@ ul.menu li {
 .loader #timeout {
     display: none;
 }
+
+.form-separator {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #9B9B9B;
+}
