@@ -13,7 +13,9 @@
         <!-- Keep this script inline here to make sure loading work even other js failed.  -->
         <script type="text/javascript">
             setTimeout(function(){
-                document.getElementById("timeout").style.display = 'block';
+                if (document.getElementById("timeout")) {
+                    document.getElementById("timeout").style.display = 'block';
+                }
             }, 15000);
         </script>
     </div>
