@@ -132,7 +132,7 @@ class Form extends React.Component {
                 {z.province} เขตเลือกตั้งที่ {z.zone}
               </div>
               <span className="area-name">
-                {z.prefix.subarea} {z.tambon} {z.prefix.area} {z.amphur}
+                {z.prefix.area} {z.tambon} {z.prefix.subarea} {z.amphur}
               </span>
             </a>
           </li>
