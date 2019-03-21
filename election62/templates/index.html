@@ -25,7 +25,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
-<script src="{{ ('//%s/statics/fetch.umd.js' % deploy_path) }}"></script>
+<script type="text/babel" src="{{ ('//%s/statics/fetch.umd.js' % deploy_path) }}"></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 <script>if(!(window.fetch&&window.Promise&&[].includes&&Object.assign&&window.Map)){document.write('<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch"></scr'+'ipt>')}</script>
 {% if env in ['prod', 'stage'] %}
