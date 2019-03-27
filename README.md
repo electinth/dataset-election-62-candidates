@@ -20,7 +20,7 @@ Details about tracking down API endpoints used by SmartVote will be written in T
 
 ## Zone & Candidate Browsering Website
 This website has no database. 
-This website provides a quick and simple way for users to see who are candidates in their area, using postcode. As zone and candidate data is rarely changed, a static website is sufficient to this purpose without the use of backend and database. Despite of few components needed to be developed, the static-site approach can be massively scaled, for example deployed behind a CDN service. 
+This website provides a quick and simple way for users to see who are candidates in their area, using postcode. As zone and candidate data is rarely changed, a static website is sufficient to this purpose without the use of backend and database. Apart from few components needed to be developed, the static-site approach can be massively scaled, for example deployed behind a CDN service. 
 
 This website has two components, front page, zone and party pages. The first page has a form for entering a postcode or address. We use React for HTML DOM manipulation. Zone and party pages are static files that are generated accordingly. Please see `generate-site.py` for more details.
 
