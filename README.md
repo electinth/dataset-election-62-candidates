@@ -12,7 +12,7 @@ Below are the datasets extracted from SmartVote's APIs.
 1. Zone candidate information 
    ```./data/candidates.csv, ./data/detailed-candidates.csv```
 2. Party-list candidate information
-   ```./data/partylist_candidates.csv``` with help from by (@c4n)[//github.com/c4n]
+   ```./data/partylist_candidates.csv``` with help from by [@c4n](//github.com/c4n)
 3. Party information, including leader and secretary's names, address, logo, address, policy 
    ```/data/party-information.json, ./data/party-logos```
 
