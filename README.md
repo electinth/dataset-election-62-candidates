@@ -45,7 +45,7 @@ python -m SimpleHTTPServer
 This Jupyter notebook investigates families with multiple MP candidates as well as their affiliation/electoral area in the 2019 Thai general election.  [[Notebook]](notebooks/political-dynasty.ipynb)
 
 # Acknowledgement
-This project is published as a part of [ELECT](https://elect.in.th). Founded by several parties who care about democracy and transparent information, ELECT has a mission to provide insightful information for Thai peopls to make a better voting decision. We would like to thank all volunteers behind ELECT, including The Matter, Boonmee Lab, and Minimore, and  all contributors on GitHub.
+This project is published as a part of [ELECT](https://elect.in.th). Founded by several parties who care about democracy and transparent information, the mission of ELECT is to provide insightful information for Thai peoples in order to make a better voting decision. We would like to thank all volunteers behind ELECT, including The Matter, Boonmee Lab, and Minimore, and  all contributors on GitHub.
 
 [mitmproxy]: https://mitmproxy.org
 [smartvote]: https://itunes.apple.com/th/app/smart-vote/id1447199802?l=th&mt=8
