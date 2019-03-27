@@ -12,29 +12,31 @@ Below are the datasets extracted from SmartVote's APIs.
 1. Zone candidate information 
    ```./data/candidates.csv, ./data/detailed-candidates.csv```
 2. Party-list candidate information
-   ```./data/partylist_candidates.csv``` with help from by [@c4n](//github.com/c4n)
+   ```./data/partylist_candidates.csv``` with help from [@c4n](//github.com/c4n)
 3. Party information, including leader and secretary's names, address, logo, address, policy 
    ```/data/party-information.json, ./data/party-logos```
 
 Details about tracking down API endpoints used by SmartVote will be written in TODO.
 
 ## Zone & Candidate Browsering Website
-This website has two components, first page and zone pages. The first page has a form entering a postcode. We use React for HTML DOM manipulation. On the other hand, zone pages are just static files that are generated accordingly. Please see `generate-site.py` for more details.
+This website has two components, front page, zone and party pages. The first page has a form entering a postcode. We use React for HTML DOM manipulation. In contrast, zone and party pages are static files that are generated accordingly. Please see `generate-site.py` for more details.
 
 ### Development
-Every change made to those pagaes, located in `election62`, requires a regeneration. One can use the following command to automatically update the site:
+Every change made to those pagaes, located in `election62`, requires regeneration. One can use the following command to automatically update the site:
 ```
 watch -n 10 'python generate-site.py --env dev'
 ```
 
-Because the final web will be generated to `./dist`,  you can run a static web server from the root directory and access it via `http://<HOSTNAME>:<POST>/dist`. You might encouter cross-origin issues. If that the case, please check `deploy_path` in `generate-site.py`.
+The script generates the site to `./dist`. You can run a static web server from the root directory and access it via `http://<HOSTNAME>:<POST>/dist`. You might encouter cross-origin issues. If that the case, please check `deploy_path` in `generate-site.py`.
 
+For example, one can use Python's web server module for this purpose:
 ```
 python -m SimpleHTTPServer
 ```
 
 ### Statistics
 Pageviews...
+![](./screenshots/stats.png)
 
 ## **Analysis**
 ### The presence of political families in 2019 general election
