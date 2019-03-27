@@ -38,7 +38,6 @@ python -m SimpleHTTPServer
 ```
 
 ### Statistics
-Pageviews...
 ![](./screenshots/stats.png)
 
 ## **Analysis**
