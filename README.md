@@ -1,7 +1,7 @@
 # Thailand Election'62 Zone and Candidate Dataset and Browsing Website
 
 TODO: img
-![](screenshot.png)
+![](screenshots/front-pages.png)
 
 ## Where and How did we get candidate data?
 
