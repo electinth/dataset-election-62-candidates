@@ -1,23 +1,22 @@
 # Thailand Election'62 Zone and Candidate Dataset and Browsing Website
 
-TODO: img
 ![](screenshots/front-pages.png)
 
-## Where and How did we get candidate data?
+## How did we get candidate data?
+In the beginning, we had only [PDFs](https://www.ect.go.th/ect_th/news_all.php?cid=165) from The Election Commission of Thailand (ECT). So, we had to parse them manually.
+Details about parsing can be founded in `./notebooks/dev.ipyndb`. The process caused several issues, for example, typos from tone marks not ordered properly.
 
-Two phases
-### First Pharse
-This dataset contains a list of candidates for Thailand's Election 2562, which will be held on March 24, 2562. 
+Around 20 Feb 2019, ECT released [SmartVote][smartvote] application, we then tracked down APIs, using [mitmproxy], that the application uses and be able to retreive the candidate and party information. 
 
-The original data is [PDFs](https://www.ect.go.th/ect_th/news_all.php?cid=165) from The Election Commission of Thailand (ECT).
+Below are the datasets extracted from SmartVote's APIs.
+1. Zone candidate information  (./data/candidates.csv, ./data/detailed-candidates.csv)
+2. Party-list candidate information (./data/partylist_candidates.csv extracted by @c4n)
+3. Party information, including leader and secretary's names, address, logo, address, policy (./data/party-information.json, ./data/party-logos)
 
-If you spot mistakes, please do report them [here](https://docs.google.com/spreadsheets/d/1T0-iBdBVl69q5N7Tz0fO70OtGdg70Fv0x5WiLTKOcGc/edit?usp=sharing).
+Details about tracking down API endpoints used by SmartVote will be written in TODO.
 
 ### Second Pharse
 MIMT Proxy
-
-### Datasets (./data)
-- Candidate informations
 
 ## Zone & Candidate Browsering Website
 This website has two components, first page and zone pages. The first page has a form entering a postcode. We use React for HTML DOM manipulation. On the other hand, zone pages are just static files that are generated accordingly. Please see `generate-site.py` for more details.
@@ -43,3 +42,6 @@ This Jupyter notebook investigates families with multiple MP candidates as well 
 
 # Acknowledgement
 This project is published as a part of [ELECT](https://elect.in.th). Founded by several parties who care about democracy and transparent information, ELECT has a mission to provide insightful information for Thai peopls to make a better voting decision. We would like to thank all volunteers behind ELECT, including The Matter, Boonmee Lab, and Minimore, and  all contributors on GitHub.
+
+[mitmproxy]: https://mitmproxy.org
+[smartvote]: https://itunes.apple.com/th/app/smart-vote/id1447199802?l=th&mt=8
