@@ -19,15 +19,18 @@ Below are the datasets extracted from SmartVote's APIs.
 Details about tracking down API endpoints used by SmartVote will be written in TODO.
 
 ## Zone & Candidate Browsering Website
-This website has two components, front page, zone and party pages. The first page has a form entering a postcode. We use React for HTML DOM manipulation. In contrast, zone and party pages are static files that are generated accordingly. Please see `generate-site.py` for more details.
+This website has no database. 
+This website provides a quick and simple way for users to see who are candidates in their area, using postcode. As zone and candidate data is rarely changed, a static website is sufficient to this purpose without the use of backend and database. Despite of few components needed to be developed, the static-site approach can be massively scaled, for example deployed behind a CDN service. 
+
+This website has two components, front page, zone and party pages. The first page has a form for entering a postcode or address. We use React for HTML DOM manipulation. Zone and party pages are static files that are generated accordingly. Please see `generate-site.py` for more details.
 
 ### Development
 Every change made to those pagaes, located in `election62`, requires regeneration. One can use the following command to automatically update the site:
 ```
-watch -n 10 'python generate-site.py --env dev'
+watch -n 10 'WEBPATH=127.0.0.1:8000 python generate-site.py --env dev'
 ```
 
-The script generates the site to `./dist`. You can run a static web server from the root directory and access it via `http://<HOSTNAME>:<POST>/dist`. You might encouter cross-origin issues. If that the case, please check `deploy_path` in `generate-site.py`.
+The script generates the site to `./dist`. You can run a static web server from the root directory and access it via `http://<WEBPATH>/dist`. You might encouter cross-origin issues. If that the case, please verify the value of `WEBPATH`.
 
 For example, one can use Python's web server module for this purpose:
 ```
