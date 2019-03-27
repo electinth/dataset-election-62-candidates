@@ -6,12 +6,15 @@
 In the beginning, we had only [PDFs](https://www.ect.go.th/ect_th/news_all.php?cid=165) from The Election Commission of Thailand (ECT). So, we had to parse them manually.
 Details about parsing can be founded in `./notebooks/dev.ipyndb`. The process caused several issues, for example, typos from tone marks not ordered properly.
 
-Around 20 Feb 2019, ECT released [SmartVote][smartvote] application, we then tracked down APIs, using [mitmproxy], that the application uses and be able to retreive the candidate and party information. 
+Around 20 Feb 2019, ECT released [SmartVote][smartvote] application, we then tracked down APIs that the application uses and were able to retreive the candidate and party information. 
 
 Below are the datasets extracted from SmartVote's APIs.
-1. Zone candidate information  (./data/candidates.csv, ./data/detailed-candidates.csv)
-2. Party-list candidate information (./data/partylist_candidates.csv extracted by @c4n)
-3. Party information, including leader and secretary's names, address, logo, address, policy (./data/party-information.json, ./data/party-logos)
+1. Zone candidate information 
+   `./data/candidates.csv, ./data/detailed-candidates.csv`
+2. Party-list candidate information
+   `./data/partylist_candidates.csv` with help from by @c4n
+3. Party information, including leader and secretary's names, address, logo, address, policy 
+   `/data/party-information.json, ./data/party-logos`
 
 Details about tracking down API endpoints used by SmartVote will be written in TODO.
 
