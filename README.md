@@ -10,16 +10,13 @@ Around 20 Feb 2019, ECT released [SmartVote][smartvote] application, we then tra
 
 Below are the datasets extracted from SmartVote's APIs.
 1. Zone candidate information 
-   `./data/candidates.csv, ./data/detailed-candidates.csv`
+   ```./data/candidates.csv, ./data/detailed-candidates.csv```
 2. Party-list candidate information
-   `./data/partylist_candidates.csv` with help from by @c4n
+   ```./data/partylist_candidates.csv``` with help from by (@c4n)[//github.com/c4n]
 3. Party information, including leader and secretary's names, address, logo, address, policy 
-   `/data/party-information.json, ./data/party-logos`
+   ```/data/party-information.json, ./data/party-logos```
 
 Details about tracking down API endpoints used by SmartVote will be written in TODO.
-
-### Second Pharse
-MIMT Proxy
 
 ## Zone & Candidate Browsering Website
 This website has two components, first page and zone pages. The first page has a form entering a postcode. We use React for HTML DOM manipulation. On the other hand, zone pages are just static files that are generated accordingly. Please see `generate-site.py` for more details.
