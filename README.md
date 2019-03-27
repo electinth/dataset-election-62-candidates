@@ -1,13 +1,25 @@
-# Election 2562 Candidates
+# Thailand Election'62 Zone and Candidate Dataset and Browsing Website
 
+TODO: img
+
+
+## Where and How did we get candidate data?
+
+Two phases
+### First Pharse
 This dataset contains a list of candidates for Thailand's Election 2562, which will be held on March 24, 2562. 
 
 The original data is [PDFs](https://www.ect.go.th/ect_th/news_all.php?cid=165) from The Election Commission of Thailand (ECT).
 
 If you spot mistakes, please do report them [here](https://docs.google.com/spreadsheets/d/1T0-iBdBVl69q5N7Tz0fO70OtGdg70Fv0x5WiLTKOcGc/edit?usp=sharing).
 
+### Second Pharse
+MIMT Proxy
 
-## Zone & Candidate Browsering Web
+### Datasets (./data)
+- Candidate informations
+
+## Zone & Candidate Browsering Website
 This website has two components, first page and zone pages. The first page has a form entering a postcode. We use React for HTML DOM manipulation. On the other hand, zone pages are just static files that are generated accordingly. Please see `generate-site.py` for more details.
 
 ### Development
@@ -21,37 +33,13 @@ Because the final web will be generated to `./dist`,  you can run a static web s
 ```
 python -m SimpleHTTPServer
 ```
-## Analysis
+
+### Statistics
+Pageviews...
+
+## **Analysis**
 ### The presence of political families in 2019 general election
 This Jupyter notebook investigates families with multiple MP candidates as well as their affiliation/electoral area in the 2019 Thai general election.  [[Notebook]](notebooks/political-dynasty.ipynb)
 
-## Changelog
-- 03/03/19
-```
-- เพิ่มnotebook สำรวจนามสกุล/ตระกูลที่มีผู้สมัครส.ส.มากกว่าหนึ่งคนขึ้นไป
-```
-- 25/02/19
-```
-- ย้ายลิงค์ฟอร์มแจ้ง
-- แก้โลโก้ พรรค เพื่อชาติ
-```
-- 22/02/19
-```
-- รหัสที่มีปัญหา 33150, 41000, 12120
-- https://www.facebook.com/electinth/posts/371876360297770?comment_id=372263686925704&comment_tracking=%7B%22tn%22%3A%22R9%22%7D
-- เพิ่ม logo พรรค
-```
-- 17/02/19
-```
-# v0.2.1
-- search popup
-- correct อนาคตใหม่ ดาต้า (กทม.​ 12, 30)
-- update หมายเหตุ
-
-# v0.2
-- Attach index url to the ELECT logo (Issue#1)
-- Use React Prod files (PR#2)
-- Track candidate search to Google Analytics.
-- Correct อนาคตไทย candidates, not อนาคตใหม่
-- logo พรรคกลาง
-```
+# Acknowledgement
+This project is published as a part of [ELECT](elect.in.th). Founded by several parties who care about democracy and transparent information, ELECT has a mission to provide insightful information for Thai peopls to make a better voting decision. We would like to thank all volunteers behind ELECT, including The Matter, Boonmee Lab, and Minimore, and  all contributors on GitHub.
