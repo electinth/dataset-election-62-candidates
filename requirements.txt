@@ -1,6 +1,6 @@
 appnope==0.1.0
 argcomplete==1.8.2
-arrow==0.13.0
+arrow==0.15.1
 backcall==0.1.0
 beautifulsoup4==4.5.3
 bleach==3.1.0
